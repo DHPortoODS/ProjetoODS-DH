@@ -13,7 +13,9 @@ public class QuizMatematica {
 	private static int pontuacaoBasico = 0;
 	private static int pontuacaoIntermediario = 0;
 	private static int pontuacaoAvancado = 0;
-	private String vida = "♥ ♥ ♥";
+	/*private String vida = "♥ ♥ ♥";
+	* a vida será refeita em um ArrayList
+	*/
 	
 	Random geradorDeNumeros = new Random();
 	Scanner scanner = new Scanner(System.in);
@@ -24,7 +26,7 @@ public class QuizMatematica {
 	}
 
 	
-	//Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario, vida e pontuacoes*
+	//Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario, vida e pontuações*
 	public int getA() {
 		return a;
 	}
@@ -54,7 +56,7 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-		this.respostaDoUsuario = scanner.nextInt();
+		this.respostaDoUsuario = scanner.nextInt(); //Utilização do Scanner na resposta do usuário
 	}
 
 	public static int getPontuacaoBasico() {
@@ -81,13 +83,13 @@ public class QuizMatematica {
 		QuizMatematica.pontuacaoAvancado = pontuacaoAvancado;
 	}
 
-	public String getVida() {
+	 /*public String getVida() {
 		return vida;
 	}
 
 	public void setVida(String vida) {
 		this.vida = vida;
-	}
+	}*/
 	
 	
 	
