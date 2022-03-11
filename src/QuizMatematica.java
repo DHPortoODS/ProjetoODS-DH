@@ -1,32 +1,30 @@
 package portoSeguroODS;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class QuizMatematica {
 
-	//Atributos
+	// Atributos
 	private int a;
 	private int b;
 	private int respostaCorreta;
 	private int respostaDoUsuario;
-	private static int pontuacaoBasico = 0;
-	private static int pontuacaoIntermediario = 0;
-	private static int pontuacaoAvancado = 0;
-	/*private String vida = "♥ ♥ ♥";
-	* a vida será refeita em um ArrayList
-	*/
-	
+	private static int pontuacao = 0;
+	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("[]", "[]", "[]"));
+
 	Random geradorDeNumeros = new Random();
 	Scanner scanner = new Scanner(System.in);
-	
+
 	public QuizMatematica() {
 		this.a = geradorDeNumeros.nextInt(999);
 		this.b = geradorDeNumeros.nextInt(999);
 	}
 
-	
-	//Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario, vida e pontuações*
+	// Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario,
+	// vida e pontuações*
 	public int getA() {
 		return a;
 	}
@@ -56,41 +54,47 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-		this.respostaDoUsuario = scanner.nextInt(); //Utilização do Scanner na resposta do usuário
+		this.respostaDoUsuario = (int) scanner.nextDouble();
+		/*
+		 * Utilização do Scanner na resposta do usuário A resposta muitas vezes poderá
+		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
+		 * (converte) para o tipo inteiro
+		 */
 	}
 
-	public static int getPontuacaoBasico() {
-		return pontuacaoBasico;
+	public static int getPontuacao() {
+		return pontuacao;
 	}
 
-	public static void setPontuacaoBasico(int pontuacaoBasico) {
-		QuizMatematica.pontuacaoBasico += pontuacaoBasico;
+	public static void setPontuacao(int pontuacao) {
+		QuizMatematica.pontuacao += pontuacao;
 	}
 
-	public static int getPontuacaoIntermediario() {
-		return pontuacaoIntermediario;
-	}
-
-	public static void setPontuacaoIntermediario(int pontuacaoIntermediario) {
-		QuizMatematica.pontuacaoIntermediario = pontuacaoIntermediario;
-	}
-
-	public static int getPontuacaoAvancado() {
-		return pontuacaoAvancado;
-	}
-
-	public static void setPontuacaoAvancado(int pontuacaoAvancado) {
-		QuizMatematica.pontuacaoAvancado = pontuacaoAvancado;
-	}
-
-	 /*public String getVida() {
+	public static ArrayList<String> getVida() {
 		return vida;
 	}
 
-	public void setVida(String vida) {
-		this.vida = vida;
-	}*/
-	
-	
+	public static void setVida(ArrayList<String> vida) {
+		QuizMatematica.vida = vida;
+	}
+
+	public void removeVidas(){
+		getVida().remove(getVida().size() - 1);
+		System.out.println(getVida());
+	}	
+
+	public boolean perdeu() {
+		if (getVida().size() == 0) {
+			System.out.println("GAME OVER");
+			System.out.println("Pontuação: " + getPontuacao());
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public void mostreAPontuacao() {
+		System.out.println("\nSua pontuação é de: " + getPontuacao() + "\n");
+	}
 	
 }
