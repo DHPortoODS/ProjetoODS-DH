@@ -17,8 +17,8 @@ public class ClasseTeste {
 		for(int i = 0; i < 10; i++) {
 			Intermediario testeInt = new Intermediario();
 			testeInt.fazPergunta();
-			testeInt.checaResposta();
 			testeInt.mostreAPontuacao();
+			
 		}
 	}
 
