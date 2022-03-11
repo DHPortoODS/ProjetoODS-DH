@@ -54,15 +54,15 @@ public class Intermediario extends QuizMatematica implements Situacao {
 					System.out.println("Qtd vidas: " + getVida());
 					setResposta();
 					setResultado(getA() * getB());
-					setA(numero.nextInt(10));
-					setB(numero.nextInt(10));
+					setA(numero.nextInt(10)+1);
+					setB(numero.nextInt(10)+1);
 					check();
 				}
 			}
 			if (perdeu()) {
 				break;
 			}
-			if(getPontucao() == 2 && getVida().size() > 0) {
+			if(getPontucao() == 6 && getVida().size() > 0) {
 				break;
 			}
 		}

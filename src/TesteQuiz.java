@@ -7,6 +7,8 @@ public class TesteQuiz {
 		Avançado a = new Avançado();
 
 		i.PerguntaInicial();
+		System.out.println("\nVidas: " + i.getVida());
+		System.out.println("Ponto: "+ i.getPontucao());
 
 		System.out.println("Parabens! Agora as perguntas serão um pouco dificeis a partir de agora");
 		t.PerguntaInicial();

@@ -18,23 +18,21 @@ public class QuizMatematica {
 	
 	private double resp;
 	
-	private int pontucao;
+	private static int pontucao;
 	
-	private ArrayList<String> vida = new ArrayList<>();
+	private static ArrayList<String> vida = new ArrayList<>();
 	
 	Random numero = new Random();
 	
 	Scanner leia = new Scanner(System.in);
 	
 	QuizMatematica(){
-		this.a = numero.nextInt(10);
-		this.b = numero.nextInt(10);
-		this.c = numero.nextDouble((int)10);
-		this.d = numero.nextDouble((int)10);
+		this.a = numero.nextInt(10)+1;
+		this.b = numero.nextInt(10)+1;
+		this.c = numero.nextDouble((int)10)+1;
+		this.d = numero.nextDouble((int)10)+1;
 		vida.add("♥");
-		vida.add("♥");
-		vida.add("♥");
-		
+	
 	}
 
 	public int getA() {

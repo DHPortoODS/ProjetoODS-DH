@@ -45,8 +45,8 @@ public class Avançado extends QuizMatematica implements Situacao {
 				System.out.println("Qtd vidas: " + getVida());
 				setResposta();
 				setResultado((int) Math.pow((int) getC(), 2));
-				setC(numero.nextDouble((int) 10));
-				setD(numero.nextDouble((int) 10));
+				setC(numero.nextDouble((int) 10)+1);
+				setD(numero.nextDouble((int) 10)+1);
 				check();
 
 			} else {
@@ -55,12 +55,15 @@ public class Avançado extends QuizMatematica implements Situacao {
 					System.out.println("Qtd vidas: " + getVida());
 					setResposta();
 					setResultado((int) Math.sqrt((int) getD()));
-					setC(numero.nextDouble((int) 10));
-					setD(numero.nextDouble((int) 10));
+					setC(numero.nextDouble((int) 10)+1);
+					setD(numero.nextDouble((int) 10)+1);
 					check();
 				}
 			}
 			if (perdeu()) {
+				break;
+			}
+			if(getPontucao() == 10 && getVida().size() > 0) {
 				break;
 			}
 		}
