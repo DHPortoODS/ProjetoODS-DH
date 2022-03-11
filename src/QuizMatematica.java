@@ -56,7 +56,12 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-		this.respostaDoUsuario = scanner.nextInt(); //Utilização do Scanner na resposta do usuário
+		this.respostaDoUsuario = (int) scanner.nextDouble();
+		/* 
+		 * Utilização do Scanner na resposta do usuário
+		 * A resposta muitas vezes poderá ter casas decimais, então o scanner lê o valor em double
+		 * e faz o cast (converte) para o tipo inteiro
+		 */
 	}
 
 	public static int getPontuacaoBasico() {
@@ -72,7 +77,7 @@ public class QuizMatematica {
 	}
 
 	public static void setPontuacaoIntermediario(int pontuacaoIntermediario) {
-		QuizMatematica.pontuacaoIntermediario = pontuacaoIntermediario;
+		QuizMatematica.pontuacaoIntermediario += pontuacaoIntermediario;
 	}
 
 	public static int getPontuacaoAvancado() {
@@ -80,7 +85,7 @@ public class QuizMatematica {
 	}
 
 	public static void setPontuacaoAvancado(int pontuacaoAvancado) {
-		QuizMatematica.pontuacaoAvancado = pontuacaoAvancado;
+		QuizMatematica.pontuacaoAvancado += pontuacaoAvancado;
 	}
 
 	 /*public String getVida() {
