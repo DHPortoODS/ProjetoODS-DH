@@ -59,6 +59,7 @@ public class QuizMatematica {
 		 * Utilização do Scanner na resposta do usuário A resposta muitas vezes poderá
 		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
 		 * (converte) para o tipo inteiro
+
 		 */
 	}
 
@@ -76,6 +77,7 @@ public class QuizMatematica {
 
 	public static void setVida(ArrayList<String> vida) {
 		QuizMatematica.vida = vida;
+
 	}
 
 	public void removeVidas(){
@@ -91,6 +93,7 @@ public class QuizMatematica {
 		} else {
 			return false;
 		}
+
 	}
 
 	public void mostreAPontuacao() {
