@@ -24,7 +24,7 @@ public class QuizMatematica {
 	}
 
 	// Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario,
-	// vida e pontuaÃ§Ãµes*
+	// vida e pontuações*
 	public int getA() {
 		return a;
 	}
@@ -88,7 +88,7 @@ public class QuizMatematica {
 	public boolean perdeu() {
 		if (getVida().size() == 0) {
 			System.out.println("GAME OVER");
-			System.out.println("PontuaÃ§Ã£o: " + getPontuacao());
+			System.out.println("Pontuação: " + getPontuacao());
 			return true;
 		} else {
 			return false;
@@ -97,7 +97,7 @@ public class QuizMatematica {
 	}
 
 	public void mostreAPontuacao() {
-		System.out.println("\nSua pontuaÃ§Ã£o Ã© de: " + getPontuacao() + "\n");
+		System.out.println("\nSua pontuação de: " + getPontuacao() + "\n");
 	}
 	
 }
