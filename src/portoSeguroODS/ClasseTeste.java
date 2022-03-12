@@ -14,12 +14,17 @@ public class ClasseTeste {
 		 * do contrário ele iria instanciar um objeto com os mesmos valores em todas as perguntas
 		 */
 		
-		for(int i = 0; i < 10; i++) {
-			Intermediario testeInt = new Intermediario();
-			testeInt.fazPergunta();
-			testeInt.mostreAPontuacao();
+		//for(int i = 0; i < 10; i++) {
+			//Intermediario testeInt = new Intermediario();
+			//testeInt.fazPergunta();
+			//testeInt.mostreAPontuacao();
 			
-		}
+		//}
+		
+		Basico testeBasico = new Basico();
+		testeBasico.fazPergunta();
+		testeBasico.checaResposta();
+		testeBasico.mostreAPontuacao();
 	}
 
 }
