@@ -40,6 +40,11 @@ public class Basico extends QuizMatematica implements Perguntas {
 				break;
 			}
 
+			/*if vai checar se o perdeu() retorna verdadeiro:
+			 * caso verdadeiro, significa que acabou as vidas e o usuário perdeu e ele encerra o programa
+			 * caso falso, ele passa para o próximo else if, onde ele vai verificar a pontuação
+			 * e a vida para ir para próxima etapa.
+			 */
 			if (perdeu()) {
 				break;
 			} else if (getPontuacao() == 3 && getVida().size() > 0) {
