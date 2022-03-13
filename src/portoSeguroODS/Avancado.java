@@ -4,7 +4,7 @@ public class Avancado extends QuizMatematica implements Perguntas {
 
 	public Avancado() {
 		super();
-		setA((int) Math.random() * 10 + 1); // Gera um numero aleatório entre 1 e 10.
+		setA(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
 	}
 
 	@Override
