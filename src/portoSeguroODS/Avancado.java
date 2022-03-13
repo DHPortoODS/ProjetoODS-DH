@@ -1,4 +1,4 @@
-package QuizMath;
+package portoSeguroODS;
 
 public class Avancado extends QuizMatematica implements Perguntas {
 

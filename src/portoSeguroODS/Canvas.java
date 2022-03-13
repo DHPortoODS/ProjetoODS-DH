@@ -1,4 +1,4 @@
-package QuizMath;
+package portoSeguroODS;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

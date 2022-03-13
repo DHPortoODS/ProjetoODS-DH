@@ -1,4 +1,4 @@
-package QuizMath;
+package portoSeguroODS;
 
 public class Basico extends QuizMatematica implements Perguntas {
 
