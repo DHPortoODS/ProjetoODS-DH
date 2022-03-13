@@ -12,16 +12,19 @@ public class Especial extends QuizMatematica implements Perguntas {
 
 	@Override
 	public void fazPergunta() {
-		System.out.println(getVida());
+		System.out.println("\nVidas: " + getVida());
+		
 		if (getA() > getB()) {
 			System.out.println("Qual é o resultado desta operação: ");
+			// a² + (a - b) x (c + d) + √4
 			System.out.println(getA() + "² + (" + getA() + " - " + getB() + ") x (" + getC() + "+" + getD() + ") + √4?");
-			setRespostaCorreta((int) Math.pow(getA(), 2) + (getA() - getB()) * (getC() + getD()));
+			setRespostaCorreta((int) Math.pow(getA(), 2) + (getA() - getB()) * (getC() + getD()) + (int) Math.sqrt(4));
 			checaResposta();
 		} else {
 			System.out.println("Qual é o resultado desta operação: ");
+			// a² + (b - a) x (c + d) + √9
 			System.out.println(getA() + "² + (" + getB() + " - " + getA() + ") x (" + getC() + "+" + getD() + ") + √9?");
-			setRespostaCorreta((int) Math.pow(getA(), 2) + (getB() - getA()) * (getC() + getD()));
+			setRespostaCorreta((int) Math.pow(getA(), 2) + (getB() - getA()) * (getC() + getD()) + (int) Math.sqrt(9));
 			checaResposta();
 		}
 
@@ -35,8 +38,8 @@ public class Especial extends QuizMatematica implements Perguntas {
 			setPontuacao(1);
 			mostreAPontuacao();
 		} else {
-			System.out.println("\nResposta incorreta!" + "\nA resposta Ã©: " + getRespostaCorreta() + "\n");
-			System.out.println("\nVocÃª perdeu uma vida: ");
+			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
+			System.out.println("\nVocê perdeu uma vida!\n");
 			removeVidas();
 		}
 

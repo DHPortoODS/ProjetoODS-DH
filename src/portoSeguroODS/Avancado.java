@@ -5,11 +5,12 @@ public class Avancado extends QuizMatematica implements Perguntas {
 	public Avancado() {
 		super();
 		setA(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
+		setB(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
 	}
 
 	@Override
 	public void fazPergunta() {
-		System.out.println(getVida()); // Imprime a quantidade de vidas
+		System.out.println("\nVidas: " + getVida()); // Imprime a quantidade de vidas
 
 		double potenciaOuRaiz = Math.random() * 2;
 
@@ -20,8 +21,8 @@ public class Avancado extends QuizMatematica implements Perguntas {
 			checaResposta();
 			break;
 		case 1:
-			System.out.println("Quanto é a raiz quadrada de " + getA() + "?\n");
-			setRespostaCorreta((int) Math.sqrt(getA()));
+			System.out.println("Quanto é a raiz quadrada de " + getB() + "?\n");
+			setRespostaCorreta((int) Math.sqrt(getB()));
 			checaResposta();
 			break;
 		}
@@ -36,8 +37,8 @@ public class Avancado extends QuizMatematica implements Perguntas {
 			setPontuacao(1);
 			mostreAPontuacao();
 		} else {
-			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta() + "\n");
-			System.out.println("\nVocê perdeu uma vida: ");
+			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
+			System.out.println("\nVocê perdeu uma vida!\n");
 			removeVidas();
 		}
 	}

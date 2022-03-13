@@ -5,14 +5,14 @@ public class Basico extends QuizMatematica implements Perguntas {
 	// Básico conterá contas de Subtração e Adição
 	public Basico() {
 		super();
-		setA(geradorDeNumeros.nextInt(10) + 1);
+		setA(geradorDeNumeros.nextInt(20) + 1);
 		setB(geradorDeNumeros.nextInt(10) + 1);
 	}
 
 	@Override
 	public void fazPergunta() {
-		System.out.println(getVida()); // Imprime a quantidade de vidas
-
+		System.out.println("\nVidas: " + getVida()); // Imprime a quantidade de vidas
+		
 		double somaOuSubtracao = Math.random() * 2;
 
 		switch ((int) somaOuSubtracao) {
@@ -44,8 +44,8 @@ public class Basico extends QuizMatematica implements Perguntas {
 			setPontuacao(1);
 			mostreAPontuacao();
 		} else {
-			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta() + "\n");
-			System.out.println("\nVocê perdeu uma vida: ");
+			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
+			System.out.println("\nVocê perdeu uma vida!\n");
 			removeVidas();
 		}
 	}

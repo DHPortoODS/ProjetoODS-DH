@@ -20,13 +20,17 @@ public class QuizMatematica {
 	Random geradorDeNumeros = new Random();
 	Scanner scanner = new Scanner(System.in);
 
+	// Construtor
+
 	public QuizMatematica() {
 		this.a = geradorDeNumeros.nextInt(10);
 		this.b = geradorDeNumeros.nextInt(10);
+		this.c = geradorDeNumeros.nextInt(10);
+		this.d = geradorDeNumeros.nextInt(10);
 	}
 
-	// Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario,
-	// vida e pontuaÃ§Ãµes*
+	// Getters e Setters
+
 	public int getA() {
 		return a;
 	}
@@ -74,10 +78,9 @@ public class QuizMatematica {
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
 		this.respostaDoUsuario = (int) scanner.nextDouble();
 		/*
-		 * UtilizaÃ§Ã£o do Scanner na resposta do usuÃ¡rio A resposta muitas vezes
-		 * poderÃ¡ ter casas decimais, entÃ£o o scanner lÃª o valor em double e faz o
-		 * cast (converte) para o tipo inteiro
-		 * 
+		 * Utilização do Scanner na resposta do usuário. A resposta muitas vezes poderá
+		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
+		 * (converte) para o tipo inteiro
 		 */
 	}
 
@@ -98,14 +101,16 @@ public class QuizMatematica {
 
 	}
 
+	// Métodos da classe mãe
+
 	public void removeVidas() {
 		getVida().remove(getVida().size() - 1);
 	}
 
 	public boolean perdeu() {
 		if (getVida().size() == 0) {
-			System.out.println("GAME OVER");
-			System.out.println("Pontuação: " + getPontuacao());
+			System.out.println("\nGAME OVER");
+			System.out.println("Pontuação final: " + getPontuacao());
 			return true;
 		} else {
 			return false;
@@ -155,7 +160,7 @@ public class QuizMatematica {
 	}
 
 	public void mostreAPontuacao() {
-		System.out.println("\nSua pontuação de: " + getPontuacao() + "\n");
+		System.out.println("\nSua pontuação é: " + getPontuacao() + "\n");
 	}
 
 }

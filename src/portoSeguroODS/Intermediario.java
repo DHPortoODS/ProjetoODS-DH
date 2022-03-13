@@ -15,7 +15,7 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 
 	@Override
 	public void fazPergunta() {
-		System.out.println(getVida()); // Imprime a quantidade de vidas
+		System.out.println("\nVidas: " + getVida()); // Imprime a quantidade de vidas
 		
 		double divisaoOuMultiplicacao = Math.random() * 2;
 
@@ -42,8 +42,8 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 			setPontuacao(1);
 			mostreAPontuacao();
 		} else {
-			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta() + "\n");
-			System.out.println("\nVocê perdeu uma vida: ");
+			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
+			System.out.println("\nVocê perdeu uma vida!\n");
 			removeVidas();
 		}
 	}
