@@ -93,9 +93,55 @@ public class QuizMatematica {
 			return false;
 		}
 	}
+	
+	//Função para quando perder 3 vezes no módulo básico
+	public boolean perdeuBasico() {
+		if (getVida().size() == 0) {
+			System.out.println("Pontuação: " + getPontuacao());
+			System.out.println("\nVocê precisa estudar mais. \nAcesse esse link: https://www.youtube.com/watch?v=AUzyuZdg68Y&ab_channel=ProfessoraAlineSantana \ne esse outro link: "
+					+ "https://trilhante.com.br/curso/operacoes-basicas/aula/operacoes-basicas-adicao-subtracao-multiplicacao-e-divisao#:~:text=A%20ADI%C3%87%C3%83O%20pode%20ser%20entendida,somado%20com%20um%20n%C3%BAmero%20POSITIVO.");
+			return true;
+		} else {
+			return false;
+		}
 
-	public void mostreAPontuacao() {
-		System.out.println("\nSua pontuação é de: " + getPontuacao() + "\n");
 	}
+	
+	
+	//Função para quando perder 3 vezes no módulo Intermediário
+		public boolean perdeuIntermediario() {
+			if (getVida().size() == 0) {
+				System.out.println("Pontuação: " + getPontuacao());
+				System.out.println("\nVocê precisa estudar mais. \nAcesse esse link: https://www.youtube.com/watch?v=GsHAXCgbhm4&ab_channel=Matem%C3%A1ticaF%C3%A1cil \ne esse outro link: "
+						+ "https://mundoeducacao.uol.com.br/matematica/multiplicacao.htm e https://brasilescola.uol.com.br/matematica/divisao.htm");
+				return true;
+			} else {
+				return false;
+			}
 
+		}
+	
+
+		
+		//Função para quando perder 3 vezes no módulo Avançado
+		public boolean perdeuAvancado() {
+			if (getVida().size() == 0) {
+				System.out.println("Pontuação: " + getPontuacao());
+				System.out.println("\nVocê precisa estudar mais. \\nAcesse esse link: https://www.youtube.com/watch?v=P1HdAS_nBHE \ne "
+						+ "esse outro link: https://www.todamateria.com.br/potenciacao-e-radiciacao/");
+				return true;
+			} else {
+				return false;
+			}
+
+		}
+	
+	
+	
+	
+	
+	public void mostreAPontuacao() {
+		System.out.println("\nSua pontuação de: " + getPontuacao() + "\n");
+	}
+	
 }
