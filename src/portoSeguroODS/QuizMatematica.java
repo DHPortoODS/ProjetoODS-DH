@@ -1,5 +1,6 @@
 package portoSeguroODS;
 
+import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -109,8 +110,17 @@ public class QuizMatematica {
 
 	public boolean perdeu() {
 		if (getVida().size() == 0) {
-			System.out.println("\nGAME OVER");
-			System.out.println("Pontuação final: " + getPontuacao());
+
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						TelaGameOver frame = new TelaGameOver();
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 			return true;
 		} else {
 			return false;
@@ -152,10 +162,6 @@ public class QuizMatematica {
 			System.out.println(
 					"\nVocê precisa estudar mais. \\nAcesse esse link: https://www.youtube.com/watch?v=P1HdAS_nBHE \ne "
 							+ "esse outro link: https://www.todamateria.com.br/potenciacao-e-radiciacao/");
-			return true;
-		} else {
-			return false;
-		}
 
 	}
 
