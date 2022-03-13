@@ -21,7 +21,7 @@ public class Canvas extends JPanel {
 	public Canvas() {
 
 		try {
-			imagemFundo = ImageIO.read(new File("C:\\workspace-eclipse\\workspace\\ProejtoQuiz\\img\\logo.png"));
+			imagemFundo = ImageIO.read(new File("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\logo.png"));
 		} catch (IOException ex) {
 			Logger.getLogger(Canvas.class.getName()).log(Level.SEVERE, null, ex);
 		}

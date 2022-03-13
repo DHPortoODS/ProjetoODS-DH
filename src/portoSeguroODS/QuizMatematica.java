@@ -21,6 +21,8 @@ public class QuizMatematica {
 	Random geradorDeNumeros = new Random();
 	Scanner scanner = new Scanner(System.in);
 
+	// Construtor
+
 	public QuizMatematica() {
 		this.a = geradorDeNumeros.nextInt(10);
 		this.b = geradorDeNumeros.nextInt(10);
@@ -28,8 +30,8 @@ public class QuizMatematica {
 		this.d = geradorDeNumeros.nextInt(10);
 	}
 
-	// Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario,
-	// vida e pontuaÃ§Ãµes*
+	// Getters e Setters
+
 	public int getA() {
 		return a;
 	}
@@ -77,10 +79,9 @@ public class QuizMatematica {
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
 		this.respostaDoUsuario = (int) scanner.nextDouble();
 		/*
-		 * UtilizaÃ§Ã£o do Scanner na resposta do usuÃ¡rio A resposta muitas vezes
-		 * poderÃ¡ ter casas decimais, entÃ£o o scanner lÃª o valor em double e faz o
-		 * cast (converte) para o tipo inteiro
-		 * 
+		 * Utilização do Scanner na resposta do usuário. A resposta muitas vezes poderá
+		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
+		 * (converte) para o tipo inteiro
 		 */
 	}
 
@@ -101,9 +102,10 @@ public class QuizMatematica {
 
 	}
 
+	// Métodos da classe mãe
+
 	public void removeVidas() {
 		getVida().remove(getVida().size() - 1);
-
 	}
 
 	public boolean perdeu() {
@@ -119,7 +121,19 @@ public class QuizMatematica {
 					}
 				}
 			});
+			return true;
+		} else {
+			return false;
+		}
+	}
 
+	// Função para quando perder 3 vezes no módulo básico
+	public boolean perdeuBasico() {
+		if (getVida().size() == 0) {
+			System.out.println("Pontuação: " + getPontuacao());
+			System.out.println(
+					"\nVocê precisa estudar mais. \nAcesse esse link: https://www.youtube.com/watch?v=AUzyuZdg68Y&ab_channel=ProfessoraAlineSantana \ne esse outro link: "
+							+ "https://trilhante.com.br/curso/operacoes-basicas/aula/operacoes-basicas-adicao-subtracao-multiplicacao-e-divisao#:~:text=A%20ADI%C3%87%C3%83O%20pode%20ser%20entendida,somado%20com%20um%20n%C3%BAmero%20POSITIVO.");
 			return true;
 		} else {
 			return false;
@@ -127,8 +141,32 @@ public class QuizMatematica {
 
 	}
 
+	// Função para quando perder 3 vezes no módulo Intermediário
+	public boolean perdeuIntermediario() {
+		if (getVida().size() == 0) {
+			System.out.println("Pontuação: " + getPontuacao());
+			System.out.println(
+					"\nVocê precisa estudar mais. \nAcesse esse link: https://www.youtube.com/watch?v=GsHAXCgbhm4&ab_channel=Matem%C3%A1ticaF%C3%A1cil \ne esse outro link: "
+							+ "https://mundoeducacao.uol.com.br/matematica/multiplicacao.htm e https://brasilescola.uol.com.br/matematica/divisao.htm");
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+	// Função para quando perder 3 vezes no módulo Avançado
+	public boolean perdeuAvancado() {
+		if (getVida().size() == 0) {
+			System.out.println("Pontuação: " + getPontuacao());
+			System.out.println(
+					"\nVocê precisa estudar mais. \\nAcesse esse link: https://www.youtube.com/watch?v=P1HdAS_nBHE \ne "
+							+ "esse outro link: https://www.todamateria.com.br/potenciacao-e-radiciacao/");
+
+	}
+
 	public void mostreAPontuacao() {
-		System.out.println("\nSua pontuaÃ§Ã£o Ã© de: " + getPontuacao() + "\n");
+		System.out.println("\nSua pontuação é: " + getPontuacao() + "\n");
 	}
 
 }
