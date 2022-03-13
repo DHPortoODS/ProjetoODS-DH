@@ -56,10 +56,10 @@ public class QuizMatematica {
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
 		this.respostaDoUsuario = (int) scanner.nextDouble();
 		/*
-		 * UtilizaÃ§Ã£o do Scanner na resposta do usuÃ¡rio A resposta muitas vezes poderÃ¡
-		 * ter casas decimais, entÃ£o o scanner lÃª o valor em double e faz o cast
-		 * (converte) para o tipo inteiro
-
+		 * UtilizaÃ§Ã£o do Scanner na resposta do usuÃ¡rio A resposta muitas vezes
+		 * poderÃ¡ ter casas decimais, entÃ£o o scanner lÃª o valor em double e faz o
+		 * cast (converte) para o tipo inteiro
+		 * 
 		 */
 	}
 
@@ -80,24 +80,22 @@ public class QuizMatematica {
 
 	}
 
-	public void removeVidas(){
+	public void removeVidas() {
 		getVida().remove(getVida().size() - 1);
-		
-	}	
+	}
 
 	public boolean perdeu() {
 		if (getVida().size() == 0) {
 			System.out.println("GAME OVER");
-			System.out.println("PontuaÃ§Ã£o: " + getPontuacao());
+			System.out.println("Pontuação: " + getPontuacao());
 			return true;
 		} else {
 			return false;
 		}
-
 	}
 
 	public void mostreAPontuacao() {
-		System.out.println("\nSua pontuaÃ§Ã£o Ã© de: " + getPontuacao() + "\n");
+		System.out.println("\nSua pontuação é de: " + getPontuacao() + "\n");
 	}
-	
+
 }
