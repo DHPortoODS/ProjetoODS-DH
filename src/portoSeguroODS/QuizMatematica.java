@@ -13,18 +13,18 @@ public class QuizMatematica {
 	private int respostaCorreta;
 	private int respostaDoUsuario;
 	private static int pontuacao = 0;
-	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("[]", "[]", "[]"));
+	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("♥", "♥", "♥"));
 
 	Random geradorDeNumeros = new Random();
 	Scanner scanner = new Scanner(System.in);
 
 	public QuizMatematica() {
-		this.a = geradorDeNumeros.nextInt(999);
-		this.b = geradorDeNumeros.nextInt(999);
+		this.a = geradorDeNumeros.nextInt(10);
+		this.b = geradorDeNumeros.nextInt(10);
 	}
 
 	// Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario,
-	// vida e pontua��es*
+	// vida e pontuaÃ§Ãµes*
 	public int getA() {
 		return a;
 	}
@@ -56,8 +56,8 @@ public class QuizMatematica {
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
 		this.respostaDoUsuario = (int) scanner.nextDouble();
 		/*
-		 * Utilização do Scanner na resposta do usuário A resposta muitas vezes poderá
-		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
+		 * UtilizaÃ§Ã£o do Scanner na resposta do usuÃ¡rio A resposta muitas vezes poderÃ¡
+		 * ter casas decimais, entÃ£o o scanner lÃª o valor em double e faz o cast
 		 * (converte) para o tipo inteiro
 
 		 */
@@ -82,13 +82,13 @@ public class QuizMatematica {
 
 	public void removeVidas(){
 		getVida().remove(getVida().size() - 1);
-		System.out.println(getVida());
+		
 	}	
 
 	public boolean perdeu() {
 		if (getVida().size() == 0) {
 			System.out.println("GAME OVER");
-			System.out.println("Pontua��o: " + getPontuacao());
+			System.out.println("PontuaÃ§Ã£o: " + getPontuacao());
 			return true;
 		} else {
 			return false;
@@ -97,7 +97,7 @@ public class QuizMatematica {
 	}
 
 	public void mostreAPontuacao() {
-		System.out.println("\nSua pontua��o de: " + getPontuacao() + "\n");
+		System.out.println("\nSua pontuaÃ§Ã£o Ã© de: " + getPontuacao() + "\n");
 	}
 	
 }

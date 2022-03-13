@@ -1,30 +1,38 @@
 package portoSeguroODS;
 
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
 public class ClasseTeste {
 
 	public static void main(String[] args) {
+		Basico basico = new Basico();
+		Intermediario intermediario = new Intermediario();
+		Avancado avancado = new Avancado();
 
-		/*for(int i = 0; i < 10; i++) {
-		Basico testeBasico = new Basico();
-		testeBasico.fazPergunta();
-		testeBasico.checaResposta();
-		testeBasico.mostreAPontuacao();
-	}*/
-		/* A criação do objeto ficou dentro do loop para que ele instancie o objeto com números aleatórios, 
-		 * do contrário ele iria instanciar um objeto com os mesmos valores em todas as perguntas
-		 */
-		
-		//for(int i = 0; i < 10; i++) {
-			//Intermediario testeInt = new Intermediario();
-			//testeInt.fazPergunta();
-			//testeInt.mostreAPontuacao();
-			
-		//}
-		
-		Basico testeBasico = new Basico();
-		testeBasico.fazPergunta();
-		testeBasico.checaResposta();
-		testeBasico.mostreAPontuacao();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaPrincipal frame = new TelaPrincipal();
+					frame.setVisible(true);
+					
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}		
+			}
+		});
+
+		basico.fazPergunta();
+		if (QuizMatematica.getVida().size() > 0) {
+			intermediario.fazPergunta();
+		}
+		if (QuizMatematica.getVida().size() > 0) {
+			avancado.fazPergunta();
+		} else {
+			System.out.println("Acabou");
+		}
 	}
 
 }
