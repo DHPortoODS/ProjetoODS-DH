@@ -1,5 +1,6 @@
 package portoSeguroODS;
 
+import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -10,6 +11,8 @@ public class QuizMatematica {
 	// Atributos
 	private int a;
 	private int b;
+	private int c;
+	private int d;
 	private int respostaCorreta;
 	private int respostaDoUsuario;
 	private static int pontuacao = 0;
@@ -21,6 +24,8 @@ public class QuizMatematica {
 	public QuizMatematica() {
 		this.a = geradorDeNumeros.nextInt(10);
 		this.b = geradorDeNumeros.nextInt(10);
+		this.c = geradorDeNumeros.nextInt(10);
+		this.d = geradorDeNumeros.nextInt(10);
 	}
 
 	// Getters e Setters dos atritubos: a, b, respostaCorreta, respostaDoUsuario,
@@ -41,6 +46,22 @@ public class QuizMatematica {
 		this.b = b;
 	}
 
+	public int getC() {
+		return c;
+	}
+
+	public void setC(int c) {
+		this.c = c;
+	}
+
+	public int getD() {
+		return d;
+	}
+
+	public void setD(int d) {
+		this.d = d;
+	}
+
 	public int getRespostaCorreta() {
 		return respostaCorreta;
 	}
@@ -56,10 +77,10 @@ public class QuizMatematica {
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
 		this.respostaDoUsuario = (int) scanner.nextDouble();
 		/*
-		 * UtilizaÃ§Ã£o do Scanner na resposta do usuÃ¡rio A resposta muitas vezes poderÃ¡
-		 * ter casas decimais, entÃ£o o scanner lÃª o valor em double e faz o cast
-		 * (converte) para o tipo inteiro
-
+		 * UtilizaÃ§Ã£o do Scanner na resposta do usuÃ¡rio A resposta muitas vezes
+		 * poderÃ¡ ter casas decimais, entÃ£o o scanner lÃª o valor em double e faz o
+		 * cast (converte) para o tipo inteiro
+		 * 
 		 */
 	}
 
@@ -80,15 +101,25 @@ public class QuizMatematica {
 
 	}
 
-	public void removeVidas(){
+	public void removeVidas() {
 		getVida().remove(getVida().size() - 1);
-		
-	}	
+
+	}
 
 	public boolean perdeu() {
 		if (getVida().size() == 0) {
-			System.out.println("GAME OVER");
-			System.out.println("PontuaÃ§Ã£o: " + getPontuacao());
+
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						TelaGameOver frame = new TelaGameOver();
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+
 			return true;
 		} else {
 			return false;
@@ -99,5 +130,5 @@ public class QuizMatematica {
 	public void mostreAPontuacao() {
 		System.out.println("\nSua pontuaÃ§Ã£o Ã© de: " + getPontuacao() + "\n");
 	}
-	
+
 }
