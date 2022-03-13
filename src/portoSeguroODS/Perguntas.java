@@ -1,4 +1,4 @@
-package portoSeguroODS;
+package QuizMath;
 
 public interface Perguntas {
 	

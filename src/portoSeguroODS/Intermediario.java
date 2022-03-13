@@ -1,11 +1,10 @@
-package portoSeguroODS;
+package QuizMath;
 
 public class Intermediario extends QuizMatematica implements Perguntas {
 
 	public Intermediario() {
 		super();
-		setA(geradorDeNumeros.ints(1, 10, 100).findFirst().getAsInt());
-		setB(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
+		
 		/*
 		 * O método .ints() retorna um stream de números (long) Os números que retornam
 		 * são definidos no parâmetro: (quantidadeDeNumeros, numeroInicial, numeroFinal)
@@ -16,6 +15,7 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 	@Override
 	public void fazPergunta() {
 		while (true) {
+			System.out.println(getVida()); // Imprime a quantidad de vidas
 			double divisaoOuMultiplicacao = Math.random() * 2;
 
 			switch ((int) divisaoOuMultiplicacao) {
@@ -23,13 +23,15 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 				System.out.println("\nQuanto é " + getA() + " / " + getB() + "?");
 				setRespostaCorreta(getA() / getB());
 				checaResposta();
-				mostreAPontuacao();
+				setA(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
+				setB(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
 				break;
 			case 1:
 				System.out.println("\nQuanto é " + getA() + " * " + getB() + "?");
 				setRespostaCorreta(getA() * getB());
 				checaResposta();
-				mostreAPontuacao();
+				setA(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
+				setB(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
 				break;
 			}
 			

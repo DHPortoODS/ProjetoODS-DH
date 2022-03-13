@@ -1,10 +1,10 @@
-package portoSeguroODS;
+package QuizMath;
 
 public class Avancado extends QuizMatematica implements Perguntas {
 
 	public Avancado() {
 		super();
-		setA((int) Math.random() * 10 + 1);
+
 		// Gera um numero aleatório entre 1 e 10.
 	}
 
@@ -12,6 +12,7 @@ public class Avancado extends QuizMatematica implements Perguntas {
 	@Override
 	public void fazPergunta() {
 		while (true) {
+			System.out.println(getVida()); // Imprime a quantidad de vidas
 			double potenciaOuRaiz = Math.random() * 2;
 			
 			/* Gera um numero aleatório: 1 ou 2
@@ -24,11 +25,13 @@ public class Avancado extends QuizMatematica implements Perguntas {
 				System.out.println("Quanto é " + getA() + " ao quadrado?\n");
 				setRespostaCorreta((int) Math.pow(getA(), 2));
 				checaResposta();
+				setA((int) Math.random() * 10 + 1);
 				break;
 			case 1:
 				System.out.println("Quanto é a raiz quadrada de " + getA() + "?\n");
 				setRespostaCorreta((int) Math.sqrt(getA()));
 				checaResposta();
+				setA((int) Math.random() * 10 + 1);
 				break;
 			}
 			

@@ -1,45 +1,32 @@
-package portoSeguroODS;
+package QuizMath;
 
 public class Basico extends QuizMatematica implements Perguntas {
 
+	// Básico conterá contas de Subtração e Adição
 	public Basico() {
 		super();
+	
 	}
 
 	@Override
 	public void fazPergunta() {
+		
 		while (true) {
-			
-			setA(geradorDeNumeros.nextInt(999));
-			setB(geradorDeNumeros.nextInt(999));
-
-			double somaOuSubtracao = Math.random() * 2;
-
 			System.out.println(getVida()); // Imprime a quantidad de vidas
-
-			switch ((int) somaOuSubtracao) {
-			case 0:
-				System.out.println("\nQuanto é " + getA() + " + " + getB() + "?");
+			if (getA() > getB()) {
+				System.out.println("Quanto é " + getA() + " - " + getB() + "?");
+				setRespostaCorreta(getA() - getB());
+				checaResposta();
+				setA(geradorDeNumeros.nextInt(10));
+				setB(geradorDeNumeros.nextInt(10));
+			} else {
+				System.out.println("Quanto é " + getA() + " + " + getB() + "?");
 				setRespostaCorreta(getA() + getB());
 				checaResposta();
-				mostreAPontuacao();
-				break;
-
-			case 1:
-				if (getA() > getB()) {
-					System.out.println("\nQuanto é " + getA() + " - " + getB() + "?");
-					setRespostaCorreta(getA() - getB());
-					checaResposta();
-					mostreAPontuacao();
-				} else {
-					System.out.println("\nQuanto é " + getB() + " - " + getA() + "?");
-					setRespostaCorreta(getB() - getA());
-					checaResposta();
-					mostreAPontuacao();
-				}
-				break;
+				setA(geradorDeNumeros.nextInt(10));
+				setB(geradorDeNumeros.nextInt(10));
 			}
-
+			
 			/*if vai checar se o perdeu() retorna verdadeiro:
 			 * caso verdadeiro, significa que acabou as vidas e o usuário perdeu e ele encerra o programa
 			 * caso falso, ele passa para o próximo else if, onde ele vai verificar a pontuação
@@ -52,6 +39,7 @@ public class Basico extends QuizMatematica implements Perguntas {
 				break;
 			}
 		}
+
 	}
 
 	@Override
@@ -68,4 +56,5 @@ public class Basico extends QuizMatematica implements Perguntas {
 		}
 	}
 
+	
 }
