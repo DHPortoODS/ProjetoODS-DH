@@ -19,27 +19,11 @@ public class Principal {
 			}
 		});
 
-		// Loop que irá rodar as perguntas
-		// for (int i = 0; i < 11; i++) {
-
-		// Instância das três classes de perguntas
-
-		//
-		//
-		//
-
-		/*
-		 * if vai checar se o perdeu() retorna verdadeiro: caso verdadeiro, significa
-		 * que acabou as vidas e o usuário perdeu e ele encerra o programa caso falso,
-		 * ele passa para o próximo else if, onde ele vai verificar a pontuação e a vida
-		 * para ir para próxima etapa.
-		 */
-
-		// Faz a pergunta: Básico
-
 		while (QuizMatematica.getPontuacao() < 3 && QuizMatematica.getVida().size() > 0) {
 			for (int i = 0; i < 3; i++) {
 				Basico perguntaBasico = new Basico();
+
+				// Faz a pergunta: Básico
 				perguntaBasico.fazPergunta();
 
 				if (perguntaBasico.perdeu()) {
@@ -63,8 +47,7 @@ public class Principal {
 			}
 		}
 
-		System.out.println(
-				"\n\nParabéns, você avançou para a próxima etapa!" + "\nAgora as perguntas são de nível Avançado.\n");
+		System.out.println("\n\nParabéns, você avançou para a próxima etapa!" + "\nAgora as perguntas são de nível Avançado.\n");
 
 		while (QuizMatematica.getPontuacao() == 6 && QuizMatematica.getPontuacao() < 9) {
 			for (int i = 0; i < 3; i++) {
@@ -77,8 +60,8 @@ public class Principal {
 			}
 		}
 
-		System.out.println("\n\nParabéns, você avançou para a etapa final!"
-				+ "\nResponda a esta pergunta especial: \n");
+		System.out
+				.println("\n\nParabéns, você avançou para a etapa final!" + "\nResponda a esta pergunta especial: \n");
 
 		while (QuizMatematica.getPontuacao() == 9 && QuizMatematica.getVida().size() > 0) {
 			for (int i = 0; i < 3; i++) {
