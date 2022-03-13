@@ -4,7 +4,8 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 
 	public Intermediario() {
 		super();
-		
+		setA(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
+		setB(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
 		/*
 		 * O método .ints() retorna um stream de números (long) Os números que retornam
 		 * são definidos no parâmetro: (quantidadeDeNumeros, numeroInicial, numeroFinal)
@@ -14,33 +15,21 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 
 	@Override
 	public void fazPergunta() {
-		while (true) {
-			System.out.println(getVida()); // Imprime a quantidad de vidas
-			double divisaoOuMultiplicacao = Math.random() * 2;
+		System.out.println(getVida()); // Imprime a quantidade de vidas
+		
+		double divisaoOuMultiplicacao = Math.random() * 2;
 
-			switch ((int) divisaoOuMultiplicacao) {
-			case 0:
-				System.out.println("\nQuanto é " + getA() + " / " + getB() + "?");
-				setRespostaCorreta(getA() / getB());
-				checaResposta();
-				setA(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
-				setB(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
-				break;
-			case 1:
-				System.out.println("\nQuanto é " + getA() + " * " + getB() + "?");
-				setRespostaCorreta(getA() * getB());
-				checaResposta();
-				setA(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
-				setB(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
-				break;
-			}
-			
-			if (perdeu()) {
-				break;
-			} else if (getPontuacao() == 6 && getVida().size() > 0) {
-				getPontuacao();
-				break;
-			}
+		switch ((int) divisaoOuMultiplicacao) {
+		case 0:
+			System.out.println("\nQuanto é " + getA() + " / " + getB() + "?");
+			setRespostaCorreta(getA() / getB());
+			checaResposta();
+			break;
+		case 1:
+			System.out.println("\nQuanto é " + getA() + " * " + getB() + "?");
+			setRespostaCorreta(getA() * getB());
+			checaResposta();
+			break;
 		}
 
 	}
@@ -59,5 +48,4 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 		}
 	}
 
-	
 }
