@@ -81,13 +81,22 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-		this.respostaDoUsuario = (int) scanner.nextDouble();
-		/*
-		 * Utilização do Scanner na resposta do usuário. A resposta muitas vezes poderá
-		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
-		 * (converte) para o tipo inteiro
-		 */
-	}
+	    boolean continua = true;
+	    
+	    do{
+	      try{
+	        this.respostaDoUsuario = (int) scanner.nextDouble();
+
+	        continua = false;
+
+	      }catch (InputMismatchException erro1) {
+	        System.err.println("Não é permitido inserir letras, informe apenas números!");
+	        scanner.nextLine(); //descarta a entrada errada do usuário
+	      }
+		    
+	    }while(continua);
+		
+	  }
 
 	public static int getPontuacao() {
 		return pontuacao;
