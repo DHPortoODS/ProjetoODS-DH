@@ -36,7 +36,7 @@ public class Especial extends QuizMatematica implements Perguntas {
 		if (getRespostaCorreta() == getRespostaDoUsuario()) {
 			System.out.println("\nReposta correta!");
 			setPontuacao(1);
-			mostreAPontuacao();
+			QuizMatematica.parabens();
 		} else {
 			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
 			System.out.println("\nVocê perdeu uma vida!\n");

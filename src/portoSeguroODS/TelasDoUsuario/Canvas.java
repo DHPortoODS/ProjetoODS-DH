@@ -1,4 +1,4 @@
-package portoSeguroODS;
+package portoSeguroODS.TelasDoUsuario;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

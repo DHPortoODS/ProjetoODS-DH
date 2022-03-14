@@ -1,4 +1,4 @@
-package portoSeguroODS;
+package portoSeguroODS.TelasDoUsuario;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import portoSeguroODS.QuizMatematica;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
@@ -51,8 +54,6 @@ public class TelaGameOver extends JFrame {
 		FundoGameOver.setBounds(0, 0, 450, 261);
 		contentPane.setLayout(null);
 		
-		QuizMatematica.setPontuacao(9);
-		
 		JButton botaoSair = new JButton("Sair");
 		botaoSair.setBackground(Color.LIGHT_GRAY);
 		botaoSair.addActionListener(new ActionListener() {
@@ -65,12 +66,12 @@ public class TelaGameOver extends JFrame {
 		JLabel pontos = new JLabel("Pontos: "+QuizMatematica.getPontuacao());
 		pontos.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		pontos.setForeground(Color.WHITE);
-		pontos.setBounds(195, 29, 84, 14);
+		pontos.setBounds(195, 29, 100, 14);
 		contentPane.add(pontos);
 		
 		JLabel fundoGameOver = new JLabel();
 		fundoGameOver.setBounds(0, -10, 480, 270);
-		fundoGameOver.setIcon(new ImageIcon("C:\\workspace-eclipse\\workspace\\ProejtoQuiz\\img\\gameOver.gif"));
+		fundoGameOver.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\gameOver.gif"));
 		contentPane.add(fundoGameOver);
 		FundoGameOver.setLayout(new BorderLayout(0, 0));
 	}

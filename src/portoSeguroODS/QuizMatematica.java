@@ -6,6 +6,10 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+import portoSeguroODS.TelasDoUsuario.TelaCongragulations;
+import portoSeguroODS.TelasDoUsuario.TelaGameOver;
+import portoSeguroODS.TelasDoUsuario.TelaPrincipal;
+
 public class QuizMatematica {
 
 	// Atributos
@@ -104,6 +108,21 @@ public class QuizMatematica {
 
 	// Métodos da classe mãe
 
+	public static void perguntaNome() {
+		// Abre a interface para perguntar o nome
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							TelaPrincipal frame = new TelaPrincipal();
+							frame.setVisible(true);
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+	}
+	
 	public void removeVidas() {
 		getVida().remove(getVida().size() - 1);
 	}
@@ -111,6 +130,7 @@ public class QuizMatematica {
 	public boolean perdeu() {
 		if (getVida().size() == 0) {
 
+			// Abre a Interface de Game Over
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
@@ -127,13 +147,27 @@ public class QuizMatematica {
 		}
 	}
 
+	public static void parabens() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaCongragulations frame = new TelaCongragulations();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 	// Função para quando perder 3 vezes no módulo básico
 	public boolean perdeuBasico() {
 		if (getVida().size() == 0) {
 			System.out.println("Pontuação: " + getPontuacao());
-			System.out.println(
-					"\nVocê precisa estudar mais. \nAcesse esse link: https://www.youtube.com/watch?v=AUzyuZdg68Y&ab_channel=ProfessoraAlineSantana \ne esse outro link: "
-							+ "https://trilhante.com.br/curso/operacoes-basicas/aula/operacoes-basicas-adicao-subtracao-multiplicacao-e-divisao#:~:text=A%20ADI%C3%87%C3%83O%20pode%20ser%20entendida,somado%20com%20um%20n%C3%BAmero%20POSITIVO.");
+			System.out.println("\n Você precisa estudar mais."
+					+ "\n Sugerimos estes links:"
+					+ "\n https://www.youtube.com/watch?v=AUzyuZdg68Y&ab_channel=ProfessoraAlineSantana"
+					+ "\n https://trilhante.com.br/curso/operacoes-basicas/aula/operacoes-basicas-adicao-subtracao-multiplicacao-e-divisao#:~:text=A%20ADI%C3%87%C3%83O%20pode%20ser%20entendida,somado%20com%20um%20n%C3%BAmero%20POSITIVO.");
 			return true;
 		} else {
 			return false;
@@ -145,9 +179,11 @@ public class QuizMatematica {
 	public boolean perdeuIntermediario() {
 		if (getVida().size() == 0) {
 			System.out.println("Pontuação: " + getPontuacao());
-			System.out.println(
-					"\nVocê precisa estudar mais. \nAcesse esse link: https://www.youtube.com/watch?v=GsHAXCgbhm4&ab_channel=Matem%C3%A1ticaF%C3%A1cil \ne esse outro link: "
-							+ "https://mundoeducacao.uol.com.br/matematica/multiplicacao.htm e https://brasilescola.uol.com.br/matematica/divisao.htm");
+			System.out.println("\n Você precisa estudar mais." 
+					+ "\n Sugerimos estes links:" 
+					+ "\n https://www.youtube.com/watch?v=GsHAXCgbhm4&ab_channel=Matem%C3%A1ticaF%C3%A1cil"
+					+ "\n https://mundoeducacao.uol.com.br/matematica/multiplicacao.htm" 
+					+ "\n https://brasilescola.uol.com.br/matematica/divisao.htm");
 			return true;
 		} else {
 			return false;
@@ -159,10 +195,14 @@ public class QuizMatematica {
 	public boolean perdeuAvancado() {
 		if (getVida().size() == 0) {
 			System.out.println("Pontuação: " + getPontuacao());
-			System.out.println(
-					"\nVocê precisa estudar mais. \\nAcesse esse link: https://www.youtube.com/watch?v=P1HdAS_nBHE \ne "
-							+ "esse outro link: https://www.todamateria.com.br/potenciacao-e-radiciacao/");
-
+			System.out.println("\nVocê precisa estudar mais."
+					+ "\nSugerimos estes links: " 
+					+ "\n https://www.youtube.com/watch?v=P1HdAS_nBHE"
+					+ "\n https://www.todamateria.com.br/potenciacao-e-radiciacao/");
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void mostreAPontuacao() {

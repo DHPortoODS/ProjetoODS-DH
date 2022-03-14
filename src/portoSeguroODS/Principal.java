@@ -1,23 +1,10 @@
 package portoSeguroODS;
 
-import java.awt.EventQueue;
-
 public class Principal {
 
 	public static void main(String[] args) {
 
-		// Abre a interface para perguntar o nome
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaPrincipal frame = new TelaPrincipal();
-					frame.setVisible(true);
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		QuizMatematica.perguntaNome();
 
 		// Básico
 		for (int i = 0; i < 10; i++) {
@@ -29,6 +16,7 @@ public class Principal {
 				perguntaBasico.fazPergunta();
 
 				if (perguntaBasico.perdeu()) {
+					perguntaBasico.perdeuBasico();
 					break;
 				}
 			}
@@ -50,6 +38,7 @@ public class Principal {
 				perguntaInter.fazPergunta();
 
 				if (perguntaInter.perdeu()) {
+					perguntaInter.perdeuIntermediario();
 					break;
 				}
 			}
@@ -71,6 +60,7 @@ public class Principal {
 				perguntaAvanc.fazPergunta();
 				
 				if (perguntaAvanc.perdeu()) {
+					perguntaAvanc.perdeuAvancado();
 					break;
 				}
 			}
