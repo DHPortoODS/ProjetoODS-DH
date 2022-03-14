@@ -14,6 +14,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import portoSeguroODS.Avancado;
+import portoSeguroODS.Basico;
+import portoSeguroODS.Especial;
+import portoSeguroODS.Intermediario;
+import portoSeguroODS.QuizMatematica;
 
 public class TelaPrincipal extends JFrame {
 
@@ -66,9 +71,8 @@ public class TelaPrincipal extends JFrame {
 
 				JOptionPane.showMessageDialog(null, "Bem vindo: " + txtNome.getText());
 				dispose();
-				
-			}
 
+			}
 
 		});
 		buttonEntrar.setBounds(222, 168, 89, 23);
@@ -80,6 +84,7 @@ public class TelaPrincipal extends JFrame {
 			putValue(NAME, "SwingAction");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 		}
 	}

@@ -16,12 +16,12 @@ public class Avancado extends QuizMatematica implements Perguntas {
 
 		switch ((int) potenciaOuRaiz) {
 		case 0:
-			System.out.println("Quanto é " + getA() + " ao quadrado?\n");
+			System.out.println("Quanto Ã© " + getA() + "²?\n");
 			setRespostaCorreta((int) Math.pow(getA(), 2));
 			checaResposta();
 			break;
 		case 1:
-			System.out.println("Quanto é a raiz quadrada de " + getB() + "?\n");
+			System.out.println("Quanto Ã© √" + getB() + "?\n");
 			setRespostaCorreta((int) Math.sqrt(getB()));
 			checaResposta();
 			break;
@@ -37,8 +37,8 @@ public class Avancado extends QuizMatematica implements Perguntas {
 			setPontuacao(1);
 			mostreAPontuacao();
 		} else {
-			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
-			System.out.println("\nVocê perdeu uma vida!\n");
+			System.out.println("\nResposta incorreta!" + "\nA resposta Ã©: " + getRespostaCorreta());
+			System.out.println("\nVocÃª perdeu uma vida!\n");
 			removeVidas();
 		}
 	}

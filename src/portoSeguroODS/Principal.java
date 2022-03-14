@@ -5,23 +5,20 @@ public class Principal {
 	public static void main(String[] args) {
 
 		QuizMatematica.perguntaNome();
-
 		// Básico
 		for (int i = 0; i < 10; i++) {
-			while (QuizMatematica.getPontuacao() < 3 
-					&& QuizMatematica.getVida().size() > 0) {
-				
+			while (QuizMatematica.getPontuacao() < 3 && QuizMatematica.getVida().size() > 0) {
+
 				Basico perguntaBasico = new Basico();
 
 				perguntaBasico.fazPergunta();
 
 				if (perguntaBasico.perdeu()) {
-					perguntaBasico.perdeuBasico();
+
 					break;
 				}
 			}
 		}
-
 		// Intermediário
 		if (QuizMatematica.getPontuacao() == 3) {
 			System.out.println("\n\n\nParabéns, você avançou para a próxima etapa!"
@@ -29,8 +26,7 @@ public class Principal {
 		}
 
 		for (int i = 0; i < 10; i++) {
-			while (QuizMatematica.getPontuacao() >= 3 
-					&& QuizMatematica.getPontuacao() < 6
+			while (QuizMatematica.getPontuacao() >= 3 && QuizMatematica.getPontuacao() < 6
 					&& QuizMatematica.getVida().size() > 0) {
 
 				Intermediario perguntaInter = new Intermediario();
@@ -38,12 +34,11 @@ public class Principal {
 				perguntaInter.fazPergunta();
 
 				if (perguntaInter.perdeu()) {
-					perguntaInter.perdeuIntermediario();
+
 					break;
 				}
 			}
 		}
-		
 		// Avançado
 		if (QuizMatematica.getPontuacao() == 6) {
 			System.out.println("\n\n\nParabéns, você avançou para a próxima etapa!"
@@ -51,39 +46,37 @@ public class Principal {
 		}
 
 		for (int i = 0; i < 10; i++) {
-			while (QuizMatematica.getPontuacao() >= 6 
-					&& QuizMatematica.getPontuacao() < 9
+			while (QuizMatematica.getPontuacao() >= 6 && QuizMatematica.getPontuacao() < 9
 					&& QuizMatematica.getVida().size() > 0) {
 
 				Avancado perguntaAvanc = new Avancado();
 
 				perguntaAvanc.fazPergunta();
-				
+
 				if (perguntaAvanc.perdeu()) {
-					perguntaAvanc.perdeuAvancado();
+
 					break;
 				}
 			}
 		}
-
-		// Esoecial
+		// Especial
 		if (QuizMatematica.getPontuacao() == 9) {
-			System.out.println("\n\n\nParabéns, você avançou para a etapa final!" 
-					+ "\nResponda a esta pergunta especial: \n");
+			System.out.println(
+					"\n\n\nParabéns, você avançou para a etapa final!" + "\nResponda a esta pergunta especial: \n");
 		}
 
 		for (int i = 0; i < 10; i++) {
-			while (QuizMatematica.getPontuacao() == 9 
-					&& QuizMatematica.getVida().size() > 0) {
+			while (QuizMatematica.getPontuacao() == 9 && QuizMatematica.getVida().size() > 0) {
 
 				Especial perguntaEspec = new Especial();
-				
+
 				perguntaEspec.fazPergunta();
 				if (QuizMatematica.getVida().size() == 0) {
-					perguntaEspec.perdeu();
+					perguntaEspec.perdeuEspecial();
 					break;
 				}
 			}
 		}
+
 	}
 }

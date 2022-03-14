@@ -1,4 +1,4 @@
-package portoSeguroODS.TelasDoUsuario;
+package portoSeguroODS;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -27,6 +27,7 @@ public class Canvas extends JPanel {
 		}
 	}
 
+	//Método de dimensionamento de imagem
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);

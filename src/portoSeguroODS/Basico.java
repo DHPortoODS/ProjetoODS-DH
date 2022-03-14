@@ -47,6 +47,7 @@ public class Basico extends QuizMatematica implements Perguntas {
 			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
 			System.out.println("\nVocê perdeu uma vida!\n");
 			removeVidas();
+			
 		}
 	}
 

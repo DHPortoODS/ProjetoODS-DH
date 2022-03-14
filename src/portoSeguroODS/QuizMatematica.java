@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import portoSeguroODS.TelasDoUsuario.TelaCongragulations;
 import portoSeguroODS.TelasDoUsuario.TelaGameOver;
+import portoSeguroODS.TelasDoUsuario.TelaGameOverEspecial;
 import portoSeguroODS.TelasDoUsuario.TelaPrincipal;
 
 public class QuizMatematica {
@@ -81,22 +82,13 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-	    boolean continua = true;
-	    
-	    do{
-	      try{
-	        this.respostaDoUsuario = (int) scanner.nextDouble();
-
-	        continua = false;
-
-	      }catch (InputMismatchException erro1) {
-	        System.err.println("Não é permitido inserir letras, informe apenas números!");
-	        scanner.nextLine(); //descarta a entrada errada do usuário
-	      }
-		    
-	    }while(continua);
-		
-	  }
+		this.respostaDoUsuario = (int) scanner.nextDouble();
+		/*
+		 * Utilização do Scanner na resposta do usuário. A resposta muitas vezes poderá
+		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
+		 * (converte) para o tipo inteiro
+		 */
+	}
 
 	public static int getPontuacao() {
 		return pontuacao;
@@ -119,19 +111,22 @@ public class QuizMatematica {
 
 	public static void perguntaNome() {
 		// Abre a interface para perguntar o nome
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							TelaPrincipal frame = new TelaPrincipal();
-							frame.setVisible(true);
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaPrincipal frame = new TelaPrincipal();
 
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+					// centralizar janela na tela
+					frame.setLocationRelativeTo(null);
+					// aparece janela
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
-	
+
 	public void removeVidas() {
 		getVida().remove(getVida().size() - 1);
 	}
@@ -144,7 +139,11 @@ public class QuizMatematica {
 				public void run() {
 					try {
 						TelaGameOver frame = new TelaGameOver();
+						// Centraliza janela
+						frame.setLocationRelativeTo(null);
+						// Aparece janala
 						frame.setVisible(true);
+
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -161,7 +160,11 @@ public class QuizMatematica {
 			public void run() {
 				try {
 					TelaCongragulations frame = new TelaCongragulations();
+					// Apresenta janela
 					frame.setVisible(true);
+
+					// centralizar janela na tela
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -169,45 +172,24 @@ public class QuizMatematica {
 		});
 	}
 	
-	// Função para quando perder 3 vezes no módulo básico
-	public boolean perdeuBasico() {
+	public boolean perdeuEspecial() {
 		if (getVida().size() == 0) {
-			System.out.println("Pontuação: " + getPontuacao());
-			System.out.println("\n Você precisa estudar mais."
-					+ "\n Sugerimos estes links:"
-					+ "\n https://www.youtube.com/watch?v=AUzyuZdg68Y&ab_channel=ProfessoraAlineSantana"
-					+ "\n https://trilhante.com.br/curso/operacoes-basicas/aula/operacoes-basicas-adicao-subtracao-multiplicacao-e-divisao#:~:text=A%20ADI%C3%87%C3%83O%20pode%20ser%20entendida,somado%20com%20um%20n%C3%BAmero%20POSITIVO.");
-			return true;
-		} else {
-			return false;
-		}
 
-	}
+			// Abre a Interface de Game Over
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						TelaGameOverEspecial frame = new TelaGameOverEspecial();
+						// Centraliza janela
+						frame.setLocationRelativeTo(null);
+						// Aparece janala
+						frame.setVisible(true);
 
-	// Função para quando perder 3 vezes no módulo Intermediário
-	public boolean perdeuIntermediario() {
-		if (getVida().size() == 0) {
-			System.out.println("Pontuação: " + getPontuacao());
-			System.out.println("\n Você precisa estudar mais." 
-					+ "\n Sugerimos estes links:" 
-					+ "\n https://www.youtube.com/watch?v=GsHAXCgbhm4&ab_channel=Matem%C3%A1ticaF%C3%A1cil"
-					+ "\n https://mundoeducacao.uol.com.br/matematica/multiplicacao.htm" 
-					+ "\n https://brasilescola.uol.com.br/matematica/divisao.htm");
-			return true;
-		} else {
-			return false;
-		}
-
-	}
-
-	// Função para quando perder 3 vezes no módulo Avançado
-	public boolean perdeuAvancado() {
-		if (getVida().size() == 0) {
-			System.out.println("Pontuação: " + getPontuacao());
-			System.out.println("\nVocê precisa estudar mais."
-					+ "\nSugerimos estes links: " 
-					+ "\n https://www.youtube.com/watch?v=P1HdAS_nBHE"
-					+ "\n https://www.todamateria.com.br/potenciacao-e-radiciacao/");
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 			return true;
 		} else {
 			return false;
