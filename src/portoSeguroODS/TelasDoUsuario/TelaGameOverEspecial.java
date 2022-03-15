@@ -1,21 +1,18 @@
 package portoSeguroODS.TelasDoUsuario;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import portoSeguroODS.QuizMatematica;
-
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.ImageIcon;
 
 public class TelaGameOverEspecial extends JFrame {
 
@@ -32,7 +29,7 @@ public class TelaGameOverEspecial extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton botaoBasico = new JButton("B·sico");
+		JButton botaoBasico = new JButton("B√°sico");
 		botaoBasico.setFont(new Font("Arial", Font.PLAIN, 11));
 		botaoBasico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -40,7 +37,7 @@ public class TelaGameOverEspecial extends JFrame {
 			}
 		});
 		
-		JLabel pontos = new JLabel("PontuaÁ„o: "+ QuizMatematica.getPontuacao());
+		JLabel pontos = new JLabel("Pontua√ß√£o: "+ QuizMatematica.getPontuacao());
 		pontos.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		pontos.setForeground(Color.WHITE);
 		pontos.setBounds(10, 11, 141, 23);
@@ -48,7 +45,7 @@ public class TelaGameOverEspecial extends JFrame {
 		botaoBasico.setBounds(10, 215, 89, 23);
 		contentPane.add(botaoBasico);
 		
-		JButton botaoIntermediario = new JButton("Intermedi·rio");
+		JButton botaoIntermediario = new JButton("Intermedi√°rio");
 		botaoIntermediario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new TelaLinkIntermediario().setVisible(true);
@@ -58,7 +55,7 @@ public class TelaGameOverEspecial extends JFrame {
 		botaoIntermediario.setBounds(178, 215, 113, 23);
 		contentPane.add(botaoIntermediario);
 		
-		JButton botaoAvancado = new JButton("AvanÁado");
+		JButton botaoAvancado = new JButton("Avan√ßado");
 		botaoAvancado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new TelaLinkAvancado().setVisible(true);
@@ -71,7 +68,7 @@ public class TelaGameOverEspecial extends JFrame {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 16));
-		lblNewLabel.setIcon(new ImageIcon("C:\\workspace-eclipse\\workspace\\ProejtoQuiz\\img\\fimEspecial.png"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\fimEspecial.png"));
 		lblNewLabel.setBounds(0, 0, 480, 261);
 		contentPane.add(lblNewLabel);
 	}

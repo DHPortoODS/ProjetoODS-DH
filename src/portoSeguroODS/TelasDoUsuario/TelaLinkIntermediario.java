@@ -1,29 +1,22 @@
 package portoSeguroODS.TelasDoUsuario;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Desktop;
-import java.awt.EventQueue;
-import java.awt.FlowLayout;
 import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.security.Principal;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import portoSeguroODS.QuizMatematica;
-
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class TelaLinkIntermediario extends JFrame {
 	// private JLabel hyperlink = new JLabel(text);
@@ -44,12 +37,12 @@ public class TelaLinkIntermediario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		// Centralização da janela
+		// Centralizaï¿½ï¿½o da janela
 		setLocationRelativeTo(null);
 
 		// texto da label = link1
-		String text1 = "Video sobre Multiplicação e Divisão";
-		String text2 = "Conteudo para leitura sobre operações intermediarias";
+		String text1 = "Video sobre MultiplicaÃ§Ã£o e Divisï¿½o";
+		String text2 = "Conteudo para leitura sobre operaÃ§Ãµes intermediarias";
 
 		// Objeto links criado com text armazenado
 		JLabel link1 = new JLabel(text1);
@@ -63,24 +56,24 @@ public class TelaLinkIntermediario extends JFrame {
 		contentPane.add(link1);
 		contentPane.add(link2);
 
-		// Personalização do links apresentando na cor azul
+		// Personalizaï¿½ï¿½o do links apresentando na cor azul
 		link1.setForeground(Color.BLUE.darker());
 		link1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
 		link2.setForeground(Color.BLUE.darker());
 		link2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-		//Botão Sair
+		//Botï¿½o Sair
 		JButton botaoSair = new JButton("Sair");
 		botaoSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Comando encerra toda a aplicação
+				// Comando encerra toda a aplicaï¿½ï¿½o
 				//System.exit(0);
 				dispose();
 			}
 		});
 
-		// Deslocamento e dimensionamento do botão
+		// Deslocamento e dimensionamento do botï¿½o
 		botaoSair.setBounds(153, 127, 89, 23);
 		contentPane.add(botaoSair);
 
@@ -106,7 +99,7 @@ public class TelaLinkIntermediario extends JFrame {
 				}
 			}
 
-			// Mouse quando não estiver por cima do link, o sublinhado some
+			// Mouse quando nï¿½o estiver por cima do link, o sublinhado some
 			@Override
 			public void mouseExited(MouseEvent e) {
 				link1.setText(text1);
@@ -132,7 +125,7 @@ public class TelaLinkIntermediario extends JFrame {
 				}
 			}
 
-			// Mouse quando não estiver por cima do link, o sublinhado some
+			// Mouse quando nï¿½o estiver por cima do link, o sublinhado some
 			@Override
 			public void mouseExited(MouseEvent e) {
 				link2.setText(text2);

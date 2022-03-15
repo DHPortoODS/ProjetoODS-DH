@@ -1,4 +1,4 @@
-package Avancado;
+package portoSeguroODS.Avancado;
 
 import portoSeguroODS.Calculo;
 import portoSeguroODS.QuizMatematica;
@@ -13,7 +13,7 @@ public class Exponenciacao extends QuizMatematica implements Calculo {
 	
 	@Override
 	public void calcular() {
-		System.out.println("Quanto é " + getA() + "�?\n");
+		System.out.println("Quanto é " + getA() + "�?\n");
 		setRespostaCorreta((int) Math.pow(getA(), 2));
 		checarResposta();
 	}

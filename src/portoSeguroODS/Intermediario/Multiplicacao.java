@@ -1,4 +1,4 @@
-package Intermediario;
+package portoSeguroODS.Intermediario;
 
 import portoSeguroODS.Calculo;
 import portoSeguroODS.QuizMatematica;
