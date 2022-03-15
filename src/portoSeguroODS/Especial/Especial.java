@@ -1,6 +1,5 @@
 package Especial;
 
-
 import portoSeguroODS.Calculo;
 import portoSeguroODS.Perguntas;
 import portoSeguroODS.QuizMatematica;
@@ -14,11 +13,10 @@ public class Especial extends QuizMatematica implements Perguntas {
 
 	@Override
 	public void fazerQuiz() {
-		while (QuizMatematica.getPontuacao() == 9 
-				&& QuizMatematica.getVida().size() > 0) {
+		while (QuizMatematica.getPontuacao() == 9 && QuizMatematica.getVida().size() > 0) {
 			double escolhaAleatoria = Math.random() * 2;
 
-			System.out.println("\nVidas: " + getVida());
+			System.out.println("Vidas: " + getVida());
 
 			switch ((int) escolhaAleatoria) {
 			case 0:

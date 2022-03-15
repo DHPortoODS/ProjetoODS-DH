@@ -20,7 +20,6 @@ import Especial.Especial;
 import Intermediario.Intermediario;
 import portoSeguroODS.QuizMatematica;
 
-
 public class TelaPrincipal extends JFrame {
 
 	private JPanel contentPane;
@@ -72,7 +71,7 @@ public class TelaPrincipal extends JFrame {
 
 				JOptionPane.showMessageDialog(null, "Bem vindo: " + txtNome.getText());
 				dispose();
-				
+
 				Basico basico = new Basico();
 				basico.fazerQuiz();
 
@@ -84,8 +83,6 @@ public class TelaPrincipal extends JFrame {
 
 				Especial especial = new Especial();
 				especial.fazerQuiz();
-				
-				
 
 			}
 

@@ -20,7 +20,7 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 		while (QuizMatematica.getPontuacao() >= 3 && QuizMatematica.getPontuacao() < 6
 				&& QuizMatematica.getVida().size() > 0) {
 
-			System.out.println("\nVidas: " + getVida());
+			System.out.println("Vidas: " + getVida());
 
 			double escolhaAleatória = Math.random() * 2;
 

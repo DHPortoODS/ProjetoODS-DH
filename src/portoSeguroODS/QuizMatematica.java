@@ -168,7 +168,7 @@ public class QuizMatematica {
 			}
 		});
 	}
-	
+
 	public boolean perdeuEspecial() {
 		if (getVida().size() == 0) {
 

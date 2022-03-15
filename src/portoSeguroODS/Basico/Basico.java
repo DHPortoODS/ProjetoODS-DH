@@ -16,7 +16,8 @@ public class Basico extends QuizMatematica implements Perguntas {
 	@Override
 	public void fazerQuiz() {
 		while (QuizMatematica.getPontuacao() < 3 && QuizMatematica.getVida().size() > 0) {
-			System.out.println("\nVidas: " + getVida()); // Imprime a quantidade de vidas
+			// Imprime a quantidade de vidas
+			System.out.println("Vidas: " + getVida());
 
 			double escolhaAleatoria = Math.random() * 2;
 
