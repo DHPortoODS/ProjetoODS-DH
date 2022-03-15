@@ -7,13 +7,12 @@ public class Exponenciacao extends QuizMatematica implements Calculo {
 
 	public Exponenciacao() {
 		super();
-		setA(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
-		setB(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
+		setA(geradorDeNumeros.ints(1, 2, 11).findFirst().getAsInt());
 	}
 	
 	@Override
 	public void calcular() {
-		System.out.println("Quanto é " + getA() + "�?\n");
+		System.out.println("Quanto é " + getA() + "²?");
 		setRespostaCorreta((int) Math.pow(getA(), 2));
 		checarResposta();
 	}
