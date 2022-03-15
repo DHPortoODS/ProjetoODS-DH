@@ -12,6 +12,11 @@ public class Principal {
 		Basico basico = new Basico();
 		basico.fazerQuiz();
 		
+		Intermediario intermediario = new Intermediario();
+		intermediario.fazerQuiz();
+		
+		Intermediario avancado = new Avancado();
+		intermediario.fazerQuiz();
 		
 		/*
 		 * // Intermediário if (QuizMatematica.getPontuacao() == 3) {
