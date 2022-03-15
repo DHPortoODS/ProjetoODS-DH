@@ -3,6 +3,7 @@ package portoSeguroODS;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,18 +23,14 @@ public class QuizMatematica {
 	private static int pontuacao = 0;
 	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("♥", "♥", "♥"));
 
-	Random geradorDeNumeros = new Random();
-	Scanner scanner = new Scanner(System.in);
+	protected Random geradorDeNumeros = new Random();
+	private Scanner scanner = new Scanner(System.in);
 
 	// Construtor
 
 	public QuizMatematica() {
-		this.a = geradorDeNumeros.nextInt(10);
-		this.b = geradorDeNumeros.nextInt(10);
-		this.c = geradorDeNumeros.nextInt(10);
-		this.d = geradorDeNumeros.nextInt(10);
 	}
-
+	
 	// Getters e Setters
 
 	public int getA() {
@@ -94,7 +91,7 @@ public class QuizMatematica {
 	        scanner.nextLine(); //descarta a entrada errada do usuário
 	      }
 		    
-	    }while(continua);
+	    } while(continua);
 		
 	  }
 
