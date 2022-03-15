@@ -14,7 +14,7 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 	}
 
 	@Override
-	public void fazPergunta() {
+	public void fazerQuiz() {
 		System.out.println("\nVidas: " + getVida()); // Imprime a quantidade de vidas
 		
 		double divisaoOuMultiplicacao = Math.random() * 2;
@@ -23,29 +23,22 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 		case 0:
 			System.out.println("\nQuanto é " + getA() + " / " + getB() + "?");
 			setRespostaCorreta(getA() / getB());
-			checaResposta();
 			break;
 		case 1:
 			System.out.println("\nQuanto é " + getA() + " * " + getB() + "?");
 			setRespostaCorreta(getA() * getB());
-			checaResposta();
 			break;
 		}
 
 	}
 
-	@Override
-	public void checaResposta() {
-		setRespostaDoUsuario(0);
-		if (getRespostaCorreta() == getRespostaDoUsuario()) {
-			System.out.println("\nReposta correta!");
-			setPontuacao(1);
-			mostreAPontuacao();
-		} else {
-			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
-			System.out.println("\nVocê perdeu uma vida!\n");
-			removeVidas();
-		}
-	}
+	/*
+	 * @Override public void checaResposta() { setRespostaDoUsuario(0); if
+	 * (getRespostaCorreta() == getRespostaDoUsuario()) {
+	 * System.out.println("\nReposta correta!"); setPontuacao(1);
+	 * mostreAPontuacao(); } else { System.out.println("\nResposta incorreta!" +
+	 * "\nA resposta é: " + getRespostaCorreta());
+	 * System.out.println("\nVocê perdeu uma vida!\n"); removeVidas(); } }
+	 */
 
 }
