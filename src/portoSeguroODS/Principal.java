@@ -1,15 +1,21 @@
 package portoSeguroODS;
 
-import Avancado.Avancado;
-import Basico.Basico;
-import Especial.Especial;
-import Intermediario.Intermediario;
+import portoSeguroODS.Basico.Basico;
 
 public class Principal {
 
 	public static void main(String[] args) {
 
-		QuizMatematica.perguntaNome();
+		// QuizMatematica.perguntaNome();
 
-	}
+		// Básico
+		Basico basico = new Basico();
+		basico.fazerQuiz();
+		
+		Intermediario intermediario = new Intermediario();
+		intermediario.fazerQuiz();
+		
+		Intermediario avancado = new Avancado();
+		intermediario.fazerQuiz();
+		}
 }

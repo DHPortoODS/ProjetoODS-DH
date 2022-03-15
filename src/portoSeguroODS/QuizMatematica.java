@@ -3,6 +3,7 @@ package portoSeguroODS;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -24,14 +25,13 @@ public class QuizMatematica {
 	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("♥", "♥", "♥"));
 
 	protected Random geradorDeNumeros = new Random();
-	Scanner scanner = new Scanner(System.in);
+	private Scanner scanner = new Scanner(System.in);
 
 	// Construtor
 
 	public QuizMatematica() {
-
 	}
-
+	
 	// Getters e Setters
 
 	public int getA() {
@@ -79,13 +79,22 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-		this.respostaDoUsuario = (int) scanner.nextDouble();
-		/*
-		 * Utilização do Scanner na resposta do usuário. A resposta muitas vezes poderá
-		 * ter casas decimais, então o scanner lê o valor em double e faz o cast
-		 * (converte) para o tipo inteiro
-		 */
-	}
+	    boolean continua = true;
+	    
+	    do{
+	      try{
+	        this.respostaDoUsuario = (int) scanner.nextDouble();
+
+	        continua = false;
+
+	      }catch (InputMismatchException erro1) {
+	        System.err.println("Não é permitido inserir letras, informe apenas números!");
+	        scanner.nextLine(); //descarta a entrada errada do usuário
+	      }
+		    
+	    } while(continua);
+		
+	  }
 
 	public static int getPontuacao() {
 		return pontuacao;

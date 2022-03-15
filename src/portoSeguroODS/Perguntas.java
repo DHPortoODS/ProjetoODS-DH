@@ -4,6 +4,4 @@ public interface Perguntas {
 	
 	public void fazerQuiz();
 
-	
-
 }
