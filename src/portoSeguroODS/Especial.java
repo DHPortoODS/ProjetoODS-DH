@@ -1,6 +1,6 @@
 package portoSeguroODS;
 
-public class Especial extends QuizMatematica implements Perguntas, Calculo {
+public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 
 	public Especial() {
 		super();
@@ -12,7 +12,8 @@ public class Especial extends QuizMatematica implements Perguntas, Calculo {
 
 	@Override
 	public void fazerQuiz() {
-		while (QuizMatematica.getPontuacao() == 9 && QuizMatematica.getVida().size() > 0) {
+		while (QuizMatematica.getPontuacao() == 9 
+				&& QuizMatematica.getVida().size() > 0) {
 
 			System.out.println("\nVidas: " + getVida());
 

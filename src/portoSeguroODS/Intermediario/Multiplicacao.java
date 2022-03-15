@@ -3,7 +3,7 @@ package portoSeguroODS.Intermediario;
 import portoSeguroODS.Calculo;
 import portoSeguroODS.QuizMatematica;
 
-public class Multiplicacao extends QuizMatematica implements Calculo{
+public class Multiplicacao extends QuizMatematica implements Calculo {
 	public Multiplicacao() {
 		super();
 		setA(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
@@ -13,7 +13,7 @@ public class Multiplicacao extends QuizMatematica implements Calculo{
 	@Override
 	public void calcular() {
 		System.out.println("\nQuanto é " + getA() + " * " + getB() + "?");
-		setRespostaCorreta(getA()*getB());
+		setRespostaCorreta(getA() * getB());
 		checarResposta();
 	}
 

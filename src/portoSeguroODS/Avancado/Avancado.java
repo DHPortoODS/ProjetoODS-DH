@@ -1,22 +1,24 @@
 package portoSeguroODS.Avancado;
 
 import portoSeguroODS.Calculo;
-import portoSeguroODS.Perguntas;
+import portoSeguroODS.PerguntaQuiz;
 import portoSeguroODS.QuizMatematica;
 
-public class Avancado extends QuizMatematica implements Perguntas {
+public class Avancado extends QuizMatematica implements PerguntaQuiz {
+
 	private Calculo tipoDeCalculo;
 
 	public Avancado() {
 		super();
-
 	}
 
 	@Override
 	public void fazerQuiz() {
-		while (QuizMatematica.getPontuacao() >= 6 && QuizMatematica.getPontuacao() < 9
+		while (QuizMatematica.getPontuacao() >= 6 
+				&& QuizMatematica.getPontuacao() < 9
 				&& QuizMatematica.getVida().size() > 0) {
-			System.out.println("Vidas: " + getVida()); // Imprime a quantidade de vidas
+
+			System.out.println("\nVidas: " + getVida());
 
 			double potenciaOuRaiz = Math.random() * 2;
 
