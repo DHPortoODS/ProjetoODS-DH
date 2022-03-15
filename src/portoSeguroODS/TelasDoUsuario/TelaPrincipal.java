@@ -14,11 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import Avancado.Avancado;
-import Basico.Basico;
-import Especial.Especial;
-import Intermediario.Intermediario;
-import portoSeguroODS.QuizMatematica;
+import portoSeguroODS.Especial;
+import portoSeguroODS.Avancado.Avancado;
+import portoSeguroODS.Basico.Basico;
+import portoSeguroODS.Intermediario.Intermediario;
 
 public class TelaPrincipal extends JFrame {
 
@@ -75,8 +74,8 @@ public class TelaPrincipal extends JFrame {
 				Basico basico = new Basico();
 				basico.fazerQuiz();
 
-				Intermediario intermediário = new Intermediario();
-				intermediário.fazerQuiz();
+				Intermediario intermediario = new Intermediario();
+				intermediario.fazerQuiz();
 
 				Avancado avancado = new Avancado();
 				avancado.fazerQuiz();

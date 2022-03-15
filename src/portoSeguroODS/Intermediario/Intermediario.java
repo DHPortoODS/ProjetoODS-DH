@@ -1,4 +1,4 @@
-package Intermediario;
+package portoSeguroODS.Intermediario;
 
 import portoSeguroODS.Calculo;
 import portoSeguroODS.Perguntas;
@@ -6,9 +6,9 @@ import portoSeguroODS.QuizMatematica;
 
 public class Intermediario extends QuizMatematica implements Perguntas {
 	private Calculo tipoDeCalculo;
-	
+
 	public static void main(String[] args) {
-		
+
 	}
 
 	public Intermediario() {
@@ -22,9 +22,9 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 
 			System.out.println("Vidas: " + getVida());
 
-			double escolhaAleatória = Math.random() * 2;
+			double multiplicacaoOuDivisao = Math.random() * 2;
 
-			switch ((int) escolhaAleatória) {
+			switch ((int) multiplicacaoOuDivisao) {
 			case 0:
 				this.tipoDeCalculo = new Multiplicacao();
 				tipoDeCalculo.calcular();
@@ -35,15 +35,13 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 				tipoDeCalculo.calcular();
 				break;
 			}
-			
-			if(((QuizMatematica)tipoDeCalculo).perdeu()) {
+
+			if (((QuizMatematica) tipoDeCalculo).perdeu()) {
 				break;
 			}
 
 		}
 
 	}
-
-
 
 }

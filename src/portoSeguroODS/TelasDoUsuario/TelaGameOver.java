@@ -1,24 +1,20 @@
 package portoSeguroODS.TelasDoUsuario;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import portoSeguroODS.Principal;
 import portoSeguroODS.QuizMatematica;
-
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import java.awt.Font;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class TelaGameOver extends JFrame {
 
@@ -85,7 +81,7 @@ public class TelaGameOver extends JFrame {
 
 		JLabel fundoGameOver = new JLabel();
 		fundoGameOver.setBounds(0, -10, 480, 270);
-		fundoGameOver.setIcon(new ImageIcon("C:\\workspace-eclipse\\workspace\\ProejtoQuiz\\img\\gameOver.gif"));
+		fundoGameOver.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\gameOver.gif"));
 		contentPane.add(fundoGameOver);
 		FundoGameOver.setLayout(new BorderLayout(0, 0));
 	}
