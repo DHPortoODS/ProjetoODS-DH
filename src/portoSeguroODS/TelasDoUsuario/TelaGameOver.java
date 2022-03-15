@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import portoSeguroODS.Principal;
 import portoSeguroODS.QuizMatematica;
 
 import javax.swing.JLabel;
@@ -21,6 +22,7 @@ import java.awt.event.ActionEvent;
 
 public class TelaGameOver extends JFrame {
 
+	private Principal principal;
 	private JPanel contentPane;
 
 	/**
@@ -40,36 +42,41 @@ public class TelaGameOver extends JFrame {
 
 		JButton botaoSair = new JButton("Sair");
 		botaoSair.setBackground(Color.LIGHT_GRAY);
+
 		botaoSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == botaoSair) {
 
+					System.exit(0);
+				}
 				// Fecha apenas essa janela sem interromper toda a execução
-				System.exit(0);
 
 			}
 		});
 
-		//Botão link estudo
+		// Botão link estudo
 		JButton link = new JButton("Link Estudo");
 		link.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// fecha janela atual
 				dispose();
 
-				// passa para a janela de link
+				// passa para a janela de link de acordo com a pontuação
 				if (QuizMatematica.getPontuacao() < 3) {
 					new TelaLinkBasico().setVisible(true);
 				} else if (QuizMatematica.getPontuacao() >= 3 && QuizMatematica.getPontuacao() < 6) {
 					new TelaLinkIntermediario().setVisible(true);
 				} else if (QuizMatematica.getPontuacao() >= 6 && QuizMatematica.getPontuacao() < 9) {
 					new TelaLinkAvancado().setVisible(true);
-				};
+				}
+				;
 			}
 		});
 		link.setBounds(272, 227, 134, 23);
 		contentPane.add(link);
 		botaoSair.setBounds(96, 227, 89, 23);
 		contentPane.add(botaoSair);
+
 		JLabel pontos = new JLabel("Pontos: " + QuizMatematica.getPontuacao());
 		pontos.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		pontos.setForeground(Color.WHITE);

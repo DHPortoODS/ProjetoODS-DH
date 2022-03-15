@@ -23,16 +23,13 @@ public class QuizMatematica {
 	private static int pontuacao = 0;
 	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("♥", "♥", "♥"));
 
-	Random geradorDeNumeros = new Random();
+	protected Random geradorDeNumeros = new Random();
 	Scanner scanner = new Scanner(System.in);
 
 	// Construtor
 
 	public QuizMatematica() {
-		this.a = geradorDeNumeros.nextInt(10);
-		this.b = geradorDeNumeros.nextInt(10);
-		this.c = geradorDeNumeros.nextInt(10);
-		this.d = geradorDeNumeros.nextInt(10);
+
 	}
 
 	// Getters e Setters
