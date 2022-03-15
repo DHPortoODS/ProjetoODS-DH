@@ -32,8 +32,7 @@ public class Basico extends QuizMatematica implements Perguntas {
 				break;
 			}
 
-			if (((QuizMatematica) tipoDeCalculo).perdeu()) {
-				((QuizMatematica) tipoDeCalculo).perdeuBasico();
+			if (((QuizMatematica) tipoDeCalculo).perdeuEspecial()) {
 				break;
 			}
 		}

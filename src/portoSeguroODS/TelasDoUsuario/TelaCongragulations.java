@@ -1,37 +1,26 @@
 package portoSeguroODS.TelasDoUsuario;
 
-import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.Font;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import portoSeguroODS.QuizMatematica;
 
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class TelaCongragulations extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaCongragulations frame = new TelaCongragulations();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
 	/**
 	 * Create the frame.
 	 */
@@ -43,6 +32,25 @@ public class TelaCongragulations extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JButton botaoSair = new JButton("Sair");
+		botaoSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		botaoSair.setBounds(314, 237, 89, 23);
+		contentPane.add(botaoSair);
+		
+		JButton botaoJogarNovamente = new JButton("Jogar");
+		botaoJogarNovamente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				QuizMatematica.perguntaNome();
+			}
+		});
+		botaoJogarNovamente.setBounds(83, 237, 89, 23);
+		contentPane.add(botaoJogarNovamente);
+		
 		JLabel vidas = new JLabel("Pontos: "+ QuizMatematica.getPontuacao());
 		vidas.setForeground(Color.WHITE);
 		vidas.setFont(new Font("Arial Black", Font.PLAIN, 16));
@@ -50,15 +58,14 @@ public class TelaCongragulations extends JFrame {
 		contentPane.add(vidas);
 		
 		JLabel pontos = new JLabel("Vidas: "+ QuizMatematica.getVida());
-		pontos.setForeground(Color.WHITE);
+		pontos.setForeground(Color.RED);
 		pontos.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		pontos.setBounds(346, 34, 128, 23);
 		contentPane.add(pontos);
 		
 		JLabel fundoWin = new JLabel("New label");
-		fundoWin.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\congragulations.gif"));
+		fundoWin.setIcon(new ImageIcon("C:\\workspace-eclipse\\workspace\\ProejtoQuiz\\img\\congragulations.gif"));
 		fundoWin.setBounds(0, 0, 634, 280);
 		contentPane.add(fundoWin);
 	}
-
 }

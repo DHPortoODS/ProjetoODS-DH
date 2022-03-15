@@ -1,27 +1,25 @@
-package portoSeguroODS.Basico;
+package Intermediario;
 
 import portoSeguroODS.Calculo;
 import portoSeguroODS.QuizMatematica;
 
-public class Adicao extends QuizMatematica implements Calculo {
-
-	public Adicao() {
+public class Divisao extends QuizMatematica implements Calculo {
+	public Divisao() {
 		super();
-		setA(geradorDeNumeros.nextInt(20) + 1);
-		setB(geradorDeNumeros.nextInt(10) + 1);
+		setA(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
+		setB(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
 	}
 
 	@Override
 	public void calcular() {
-		System.out.println("\nQuanto é " + getA() + " + " + getB() + "?");
-		setRespostaCorreta(getA() + getB());
+		System.out.println("\nQuanto é " + getA() + " / " + getB() + "?");
+		setRespostaCorreta(getA() / getB());
 		checarResposta();
 	}
 
 	@Override
 	public void checarResposta() {
-		setRespostaDoUsuario(0); // Scanner do Usuário
-
+		setRespostaDoUsuario(0);
 		if (getRespostaCorreta() == getRespostaDoUsuario()) {
 			System.out.println("\nReposta correta!");
 			setPontuacao(1);
@@ -31,6 +29,7 @@ public class Adicao extends QuizMatematica implements Calculo {
 			System.out.println("\nVocê perdeu uma vida!\n");
 			removeVidas();
 		}
+
 	}
 
 }
