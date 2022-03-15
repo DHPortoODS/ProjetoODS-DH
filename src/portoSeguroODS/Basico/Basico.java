@@ -1,10 +1,10 @@
 package portoSeguroODS.Basico;
 
 import portoSeguroODS.Calculo;
-import portoSeguroODS.Perguntas;
+import portoSeguroODS.PerguntaQuiz;
 import portoSeguroODS.QuizMatematica;
 
-public class Basico extends QuizMatematica implements Perguntas {
+public class Basico extends QuizMatematica implements PerguntaQuiz {
 
 	private Calculo tipoDeCalculo;
 
@@ -32,7 +32,7 @@ public class Basico extends QuizMatematica implements Perguntas {
 				break;
 			}
 
-			if (((QuizMatematica) tipoDeCalculo).perdeuEspecial()) {
+			if (((QuizMatematica) tipoDeCalculo).perdeu()) {
 				break;
 			}
 		}

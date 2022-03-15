@@ -41,7 +41,7 @@ public class TelaLinkIntermediario extends JFrame {
 		setLocationRelativeTo(null);
 
 		// texto da label = link1
-		String text1 = "Video sobre Multiplicação e Divis�o";
+		String text1 = "Video sobre Multiplicação e Divisão";
 		String text2 = "Conteudo para leitura sobre operações intermediarias";
 
 		// Objeto links criado com text armazenado

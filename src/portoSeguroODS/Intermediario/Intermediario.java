@@ -1,15 +1,12 @@
 package portoSeguroODS.Intermediario;
 
 import portoSeguroODS.Calculo;
-import portoSeguroODS.Perguntas;
+import portoSeguroODS.PerguntaQuiz;
 import portoSeguroODS.QuizMatematica;
 
-public class Intermediario extends QuizMatematica implements Perguntas {
+public class Intermediario extends QuizMatematica implements PerguntaQuiz {
+
 	private Calculo tipoDeCalculo;
-
-	public static void main(String[] args) {
-
-	}
 
 	public Intermediario() {
 		super();
@@ -17,10 +14,11 @@ public class Intermediario extends QuizMatematica implements Perguntas {
 
 	@Override
 	public void fazerQuiz() {
-		while (QuizMatematica.getPontuacao() >= 3 && QuizMatematica.getPontuacao() < 6
+		while (QuizMatematica.getPontuacao() >= 3 
+				&& QuizMatematica.getPontuacao() < 6
 				&& QuizMatematica.getVida().size() > 0) {
 
-			System.out.println("Vidas: " + getVida());
+			System.out.println("\nVidas: " + getVida());
 
 			double multiplicacaoOuDivisao = Math.random() * 2;
 

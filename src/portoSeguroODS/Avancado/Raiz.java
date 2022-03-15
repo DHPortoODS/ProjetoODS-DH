@@ -7,14 +7,13 @@ public class Raiz extends QuizMatematica implements Calculo {
 
 	public Raiz() {
 		super();
-		setA(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
-		setB(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
+		setA(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
 	}
 	
 	@Override
 	public void calcular() {
-		System.out.println("Quanto Ã© √" + getB() + "?\n");
-		setRespostaCorreta((int) Math.sqrt(getB()));
+		System.out.println("Quanto é √" + getA() + "?\n");
+		setRespostaCorreta((int) Math.sqrt(getA()));
 		checarResposta();
 	}
 
