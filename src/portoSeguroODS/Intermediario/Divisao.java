@@ -6,11 +6,15 @@ import portoSeguroODS.Calculo;
 import portoSeguroODS.QuizMatematica;
 
 public class Divisao extends QuizMatematica implements Calculo {
+		
+	
+
 	public Divisao() {
 		super();
 		setA(geradorDeNumeros.ints(1, 2, 100).findFirst().getAsInt());
 		setB(geradorDeNumeros.ints(1, 2, 10).findFirst().getAsInt());
 	}
+		
 
 	@Override
 	public void calcularQuiz() {

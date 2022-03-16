@@ -81,7 +81,7 @@ public class TelaGameOver extends JFrame {
 
 		JLabel fundoGameOver = new JLabel();
 		fundoGameOver.setBounds(0, -10, 480, 270);
-		fundoGameOver.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\gameOver.gif"));
+		fundoGameOver.setIcon(new ImageIcon("C:\\workspace-eclipse\\workspace\\ProejtoQuiz\\img\\gameOver.gif"));
 		contentPane.add(fundoGameOver);
 		FundoGameOver.setLayout(new BorderLayout(0, 0));
 	}

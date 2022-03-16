@@ -126,7 +126,21 @@ public class QuizMatematica {
 	}
 
 	public void setcA(BigDecimal cA) {
-		this.cA = scanner.nextBigDecimal();
+		boolean continua = true;
+
+		do {
+			try {
+				this.cA = scanner.nextBigDecimal();
+
+				continua = false;
+
+			} catch (InputMismatchException erro1) {
+				System.err.println("Não é permitido inserir letras, informe apenas números!");
+				scanner.nextLine(); // descarta a entrada errada do usuário
+			}
+
+		} while (continua);
+		
 	}
 
 	public BigDecimal getcB() {
@@ -134,7 +148,21 @@ public class QuizMatematica {
 	}
 
 	public void setcB(BigDecimal cB) {
-		this.cB = scanner.nextBigDecimal();
+		boolean continua = true;
+
+		do {
+			try {
+				this.cB = scanner.nextBigDecimal();
+
+				continua = false;
+
+			} catch (InputMismatchException erro1) {
+				System.err.println("Não é permitido inserir letras, informe apenas números!");
+				scanner.nextLine(); // descarta a entrada errada do usuário
+			}
+
+		} while (continua);
+		
 	}
 
 	public BigDecimal getRespostaCorretaCalculadora() {

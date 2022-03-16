@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -15,18 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import portoSeguroODS.Calculo;
-import portoSeguroODS.Especial;
-import portoSeguroODS.QuizMatematica;
-import portoSeguroODS.Avancado.Avancado;
-import portoSeguroODS.Avancado.Exponenciacao;
-import portoSeguroODS.Avancado.Raiz;
-import portoSeguroODS.Basico.Adicao;
-import portoSeguroODS.Basico.Basico;
-import portoSeguroODS.Basico.Subtracao;
-import portoSeguroODS.Intermediario.Divisao;
-import portoSeguroODS.Intermediario.Intermediario;
-import portoSeguroODS.Intermediario.Multiplicacao;
+import portoSeguroODS.MenuQuiz;
 
 public class TelaPrincipal extends JFrame {
 
@@ -79,95 +67,8 @@ public class TelaPrincipal extends JFrame {
 
 				JOptionPane.showMessageDialog(null, "Bem vindo: " + txtNome.getText());
 				dispose();
-
-				Scanner scanner = new Scanner(System.in);
-				System.out.println("Olá, escolha qual opção você quer: " + "\n1 - Calculadora"
-						+ "\n2 - Testar os conhecimentos com um Quiz");
-				int opcao = scanner.nextInt();
-
-				do {
-					switch (opcao) {
-					case 1:
-						System.out.println("\nO que você deseja fazer na calculadora: " + "\n1 - Adição"
-								+ "\n2 - Subtração" + "\n3 - Multiplicação" + "\n4 - Divisão" + "\n5 - Exponenciação"
-								+ "\n6 - Raíz quadrada" + "\n0 - Para sair");
-
-						int opcao2 = scanner.nextInt();
-
-						while (opcao2 != 0) {
-							switch (opcao2) {
-							case 0:
-								break;
-							case 1:
-								Calculo adicao = new Adicao();
-								adicao.execCalculadora();
-								break;
-							case 2:
-								Calculo subtracao = new Subtracao();
-								subtracao.execCalculadora();
-								break;
-							case 3:
-								Calculo multi = new Multiplicacao();
-								multi.execCalculadora();
-								break;
-							case 4:
-								Calculo divisao = new Divisao();
-								divisao.execCalculadora();
-								break;
-							case 5:
-								Calculo exp = new Exponenciacao();
-								exp.execCalculadora();
-								break;
-							case 6:
-								Calculo raiz = new Raiz();
-								raiz.execCalculadora();
-								break;
-							}
-							
-						}
-
-						if (opcao2 == 0) {
-							System.out.println("\nDeseja testar o nosso quiz? (S/N)");
-							char opcao3 = scanner.next().charAt(0);
-							switch (opcao3) {
-							case 'S', 's':
-								break;
-							case 'N', 'n':
-								System.out.println("\nObrigado por testar nosso programa!");
-								System.exit(0);
-							}
-						}
-
-					case 2:
-						Basico basico = new Basico();
-						basico.fazerQuiz();
-
-						if (QuizMatematica.getPontuacao() == 3) {
-							System.out.println("\nParabéns, você avançou para a próxima etapa!"
-									+ "\nAgora as perguntas são de nível Intermediário!");
-						}
-						Intermediario intermediario = new Intermediario();
-						intermediario.fazerQuiz();
-
-						if (QuizMatematica.getPontuacao() == 6) {
-							System.out.println("\nParabéns, você avançou para a próxima etapa!"
-									+ "\nAgora as perguntas são de nível Avançado!");
-						}
-						Avancado avancado = new Avancado();
-						avancado.fazerQuiz();
-
-						if (QuizMatematica.getPontuacao() == 9) {
-							System.out.println("\nParabéns, você avançou para última etapa!"
-									+ "\nResponda a esta pergunta especial!");
-						}
-						Especial especial = new Especial();
-						especial.fazerQuiz();
-
-						opcao = 0;
-					case 0:
-						break;
-					}
-				} while (opcao != 0);
+				MenuQuiz menu = new MenuQuiz();
+				menu.executarMenu();
 			}
 		});
 		buttonEntrar.setBounds(222, 168, 89, 23);

@@ -68,7 +68,7 @@ public class TelaGameOverEspecial extends JFrame {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 16));
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\fimEspecial.png"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\workspace-eclipse\\workspace\\ProejtoQuiz\\img\\fimEspecial.png"));
 		lblNewLabel.setBounds(0, 0, 480, 261);
 		contentPane.add(lblNewLabel);
 	}

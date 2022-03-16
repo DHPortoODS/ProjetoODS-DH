@@ -12,12 +12,13 @@ public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 
 	@Override
 	public void fazerQuiz() {
-		while (QuizMatematica.getPontuacao() == 9 
-				&& QuizMatematica.getVida().size() > 0) {
+		while (QuizMatematica.getPontuacao() == 9 && QuizMatematica.getVida().size() > 0) {
 
 			System.out.println("\nVidas: " + getVida());
 
-			calcularQuiz();
+			Calculo especial = new Especial();
+
+			especial.calcularQuiz();
 
 			if (perdeu()) {
 				break;
@@ -31,20 +32,18 @@ public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 		if (getA() > getB()) {
 			System.out.println("Qual é o resultado desta operação: ");
 			// a² + (a - b) x (c + d) + √4
-			System.out.println(getA() + "² + (" 
-					+ getA() + " - " + getB() + ") x (" 
-					+ getC() + "+" + getD() + ") + √4?");
+			System.out.println(
+					getA() + "² + (" + getA() + " - " + getB() + ") x (" + getC() + "+" + getD() + ") + √4?");
 
 			setRespostaCorreta((int) Math.pow(getA(), 2) + (getA() - getB()) * (getC() + getD()) + (int) Math.sqrt(4));
 			System.out.println(getRespostaCorreta());
-			
+
 			checarRespostaQuiz();
 		} else {
 			System.out.println("Qual é o resultado desta operação: ");
 			// a² + (b - a) x (c + d) + √9
-			System.out.println(getA() + "² + (" 
-					+ getB() + " - " + getA() + ") x (" 
-					+ getC() + "+" + getD() + ") + √9?");
+			System.out.println(
+					getA() + "² + (" + getB() + " - " + getA() + ") x (" + getC() + "+" + getD() + ") + √9?");
 
 			setRespostaCorreta((int) Math.pow(getA(), 2) + (getB() - getA()) * (getC() + getD()) + (int) Math.sqrt(9));
 			System.out.println(getRespostaCorreta());
