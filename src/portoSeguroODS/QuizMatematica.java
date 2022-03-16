@@ -86,7 +86,7 @@ public class QuizMatematica {
 	        this.respostaDoUsuario = (int) scanner.nextDouble();
 
 	        continua = false;
-
+		// não permite que o usuário insira String, somente números inteiros. 
 	      }catch (InputMismatchException erro1) {
 	        System.err.println("Não é permitido inserir letras, informe apenas números! Tente novamente");
 	        scanner.nextLine(); //descarta a entrada errada do usuário
