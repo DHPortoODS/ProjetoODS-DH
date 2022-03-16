@@ -88,7 +88,7 @@ public class QuizMatematica {
 	        continua = false;
 
 	      }catch (InputMismatchException erro1) {
-	        System.err.println("Não é permitido inserir letras, informe apenas números!");
+	        System.err.println("Não é permitido inserir letras, informe apenas números! Tente novamente");
 	        scanner.nextLine(); //descarta a entrada errada do usuário
 	      }
 		    
