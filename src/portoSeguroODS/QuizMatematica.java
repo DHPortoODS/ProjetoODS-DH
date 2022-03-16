@@ -204,6 +204,7 @@ public class QuizMatematica {
 
 	public void mostreAPontuacao() {
 		System.out.println("\nSua pontuação é: " + getPontuacao() + "\n");
+		//apresenta a pontuação do usuário
 	}
 
 }
