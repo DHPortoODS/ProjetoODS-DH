@@ -26,12 +26,12 @@ public class Avancado extends QuizMatematica implements PerguntaQuiz {
 			case 0:
 
 				this.tipoDeCalculo = new Exponenciacao();
-				tipoDeCalculo.calcular();
+				tipoDeCalculo.calcularQuiz();
 				break;
 			case 1:
 
 				this.tipoDeCalculo = new Raiz();
-				tipoDeCalculo.calcular();
+				tipoDeCalculo.calcularQuiz();
 				break;
 			}
 

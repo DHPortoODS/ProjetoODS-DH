@@ -4,10 +4,10 @@ public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 
 	public Especial() {
 		super();
-		setA(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
-		setB(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
-		setC(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
-		setD(geradorDeNumeros.ints(1, 1, 10).findFirst().getAsInt());
+		setA(geradorDeNumeros.ints(1, 1, 20).findFirst().getAsInt());
+		setB(geradorDeNumeros.ints(1, 1, 20).findFirst().getAsInt());
+		setC(geradorDeNumeros.ints(1, 1, 20).findFirst().getAsInt());
+		setD(geradorDeNumeros.ints(1, 1, 20).findFirst().getAsInt());
 	}
 
 	@Override
@@ -17,7 +17,7 @@ public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 
 			System.out.println("\nVidas: " + getVida());
 
-			calcular();
+			calcularQuiz();
 
 			if (perdeu()) {
 				break;
@@ -26,7 +26,7 @@ public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 	}
 
 	@Override
-	public void calcular() {
+	public void calcularQuiz() {
 
 		if (getA() > getB()) {
 			System.out.println("Qual é o resultado desta operação: ");
@@ -36,8 +36,9 @@ public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 					+ getC() + "+" + getD() + ") + √4?");
 
 			setRespostaCorreta((int) Math.pow(getA(), 2) + (getA() - getB()) * (getC() + getD()) + (int) Math.sqrt(4));
-
-			checarResposta();
+			System.out.println(getRespostaCorreta());
+			
+			checarRespostaQuiz();
 		} else {
 			System.out.println("Qual é o resultado desta operação: ");
 			// a² + (b - a) x (c + d) + √9
@@ -46,23 +47,29 @@ public class Especial extends QuizMatematica implements PerguntaQuiz, Calculo {
 					+ getC() + "+" + getD() + ") + √9?");
 
 			setRespostaCorreta((int) Math.pow(getA(), 2) + (getB() - getA()) * (getC() + getD()) + (int) Math.sqrt(9));
+			System.out.println(getRespostaCorreta());
 
-			checarResposta();
+			checarRespostaQuiz();
 		}
 	}
 
 	@Override
-	public void checarResposta() {
+	public void checarRespostaQuiz() {
 		setRespostaDoUsuario(0); // Scanner do Usuário
 
 		if (getRespostaCorreta() == getRespostaDoUsuario()) {
 			System.out.println("\nReposta correta!");
 			setPontuacao(1);
 			mostreAPontuacao();
+			parabens();
 		} else {
 			System.out.println("\nResposta incorreta!" + "\nA resposta é: " + getRespostaCorreta());
 			System.out.println("\nVocê perdeu uma vida!\n");
 			removeVidas();
 		}
+	}
+
+	@Override
+	public void execCalculadora() {
 	}
 }

@@ -1,6 +1,7 @@
 package portoSeguroODS;
 
 import java.awt.EventQueue;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -14,7 +15,7 @@ import portoSeguroODS.TelasDoUsuario.TelaPrincipal;
 
 public class QuizMatematica {
 
-	// Atributos
+	// Atributos Quiz
 	private int a;
 	private int b;
 	private int c;
@@ -24,15 +25,21 @@ public class QuizMatematica {
 	private static int pontuacao = 0;
 	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("♥", "♥", "♥"));
 
+	// Atributos Calculadora
+
+	protected BigDecimal cA;
+	protected BigDecimal cB;
+	protected BigDecimal respostaCorretaCalculadora;
+
 	protected Random geradorDeNumeros = new Random();
-	private Scanner scanner = new Scanner(System.in);
+	protected Scanner scanner = new Scanner(System.in);
 
 	// Construtor
 
 	public QuizMatematica() {
 	}
-	
-	// Getters e Setters
+
+	// Getters e Setters Quiz
 
 	public int getA() {
 		return a;
@@ -79,22 +86,22 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-	    boolean continua = true;
-	    
-	    do{
-	      try{
-	        this.respostaDoUsuario = (int) scanner.nextDouble();
+		boolean continua = true;
 
-	        continua = false;
+		do {
+			try {
+				this.respostaDoUsuario = (int) scanner.nextDouble();
 
-	      }catch (InputMismatchException erro1) {
-	        System.err.println("Não é permitido inserir letras, informe apenas números!");
-	        scanner.nextLine(); //descarta a entrada errada do usuário
-	      }
-		    
-	    } while(continua);
-		
-	  }
+				continua = false;
+
+			} catch (InputMismatchException erro1) {
+				System.err.println("Não é permitido inserir letras, informe apenas números!");
+				scanner.nextLine(); // descarta a entrada errada do usuário
+			}
+
+		} while (continua);
+
+	}
 
 	public static int getPontuacao() {
 		return pontuacao;
@@ -110,9 +117,34 @@ public class QuizMatematica {
 
 	public static void setVida(ArrayList<String> vida) {
 		QuizMatematica.vida = vida;
-
 	}
 
+	// Getters e Setter Calculadora
+
+	public BigDecimal getcA() {
+		return cA;
+	}
+
+	public void setcA(BigDecimal cA) {
+		this.cA = scanner.nextBigDecimal();
+	}
+
+	public BigDecimal getcB() {
+		return cB;
+	}
+
+	public void setcB(BigDecimal cB) {
+		this.cB = scanner.nextBigDecimal();
+	}
+
+	public BigDecimal getRespostaCorretaCalculadora() {
+		return respostaCorretaCalculadora;
+	}
+
+	public void setRespostaCorretaCalculadora(BigDecimal respostaCorretaCalculadora) {
+		this.respostaCorretaCalculadora = respostaCorretaCalculadora;
+	}
+	
 	// Métodos da classe mãe
 
 	public static void perguntaNome() {

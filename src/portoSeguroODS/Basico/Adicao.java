@@ -10,16 +10,16 @@ public class Adicao extends QuizMatematica implements Calculo {
 		setA(geradorDeNumeros.nextInt(20) + 1);
 		setB(geradorDeNumeros.nextInt(10) + 1);
 	}
-
+	
 	@Override
-	public void calcular() {
+	public void calcularQuiz() {
 		System.out.println("\nQuanto é " + getA() + " + " + getB() + "?");
 		setRespostaCorreta(getA() + getB());
-		checarResposta();
+		checarRespostaQuiz();
 	}
 
 	@Override
-	public void checarResposta() {
+	public void checarRespostaQuiz() {
 		setRespostaDoUsuario(0); // Scanner do Usuário
 
 		if (getRespostaCorreta() == getRespostaDoUsuario()) {
@@ -32,5 +32,22 @@ public class Adicao extends QuizMatematica implements Calculo {
 			removeVidas();
 		}
 	}
-
+	
+	@Override
+	public void execCalculadora() {
+		// a + b = x
+		System.out.println("[ a + b ]");
+		System.out.println("\nDigite o valor de a: ");
+		setcA(cA);
+		
+		System.out.println("\nDigite o valor de b: ");
+		setcB(cB);
+		
+		scanner.nextLine();
+		
+		setRespostaCorretaCalculadora(getcA().add(getcB()));
+		
+		System.out.println("\n" + getcA() + " + " + getcB() + " = " + getRespostaCorretaCalculadora());
+	}
+	
 }

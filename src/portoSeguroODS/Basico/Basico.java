@@ -24,11 +24,11 @@ public class Basico extends QuizMatematica implements PerguntaQuiz {
 			switch ((int) somaOuSubtracao) {
 			case 0:
 				this.tipoDeCalculo = new Adicao();
-				tipoDeCalculo.calcular();
+				tipoDeCalculo.calcularQuiz();
 				break;
 			case 1:
 				this.tipoDeCalculo = new Subtracao();
-				tipoDeCalculo.calcular();
+				tipoDeCalculo.calcularQuiz();
 				break;
 			}
 

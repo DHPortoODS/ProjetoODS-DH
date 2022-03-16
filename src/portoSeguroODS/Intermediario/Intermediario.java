@@ -25,12 +25,12 @@ public class Intermediario extends QuizMatematica implements PerguntaQuiz {
 			switch ((int) multiplicacaoOuDivisao) {
 			case 0:
 				this.tipoDeCalculo = new Multiplicacao();
-				tipoDeCalculo.calcular();
+				tipoDeCalculo.calcularQuiz();
 				break;
 
 			case 1:
 				this.tipoDeCalculo = new Divisao();
-				tipoDeCalculo.calcular();
+				tipoDeCalculo.calcularQuiz();
 				break;
 			}
 
