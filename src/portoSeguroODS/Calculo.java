@@ -2,6 +2,10 @@ package portoSeguroODS;
 
 public interface Calculo {
 
-	public void calcular();
-	public void checarResposta();
+	
+	public void calcularQuiz();
+	
+	public void checarRespostaQuiz();
+	
+	public void execCalculadora();
 }

@@ -14,10 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import portoSeguroODS.Especial;
-import portoSeguroODS.Avancado.Avancado;
-import portoSeguroODS.Basico.Basico;
-import portoSeguroODS.Intermediario.Intermediario;
+import portoSeguroODS.MenuQuiz;
 
 public class TelaPrincipal extends JFrame {
 
@@ -70,21 +67,9 @@ public class TelaPrincipal extends JFrame {
 
 				JOptionPane.showMessageDialog(null, "Bem vindo: " + txtNome.getText());
 				dispose();
-
-				Basico basico = new Basico();
-				basico.fazerQuiz();
-
-				Intermediario intermediario = new Intermediario();
-				intermediario.fazerQuiz();
-
-				Avancado avancado = new Avancado();
-				avancado.fazerQuiz();
-
-				Especial especial = new Especial();
-				especial.fazerQuiz();
-
+				MenuQuiz menu = new MenuQuiz();
+				menu.executarMenu();
 			}
-
 		});
 		buttonEntrar.setBounds(222, 168, 89, 23);
 		canvas.add(buttonEntrar);

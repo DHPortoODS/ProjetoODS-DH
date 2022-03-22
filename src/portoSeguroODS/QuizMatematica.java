@@ -1,6 +1,7 @@
 package portoSeguroODS;
 
 import java.awt.EventQueue;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -14,7 +15,7 @@ import portoSeguroODS.TelasDoUsuario.TelaPrincipal;
 
 public class QuizMatematica {
 
-	// Atributos
+	// Atributos Quiz
 	private int a;
 	private int b;
 	private int c;
@@ -24,15 +25,21 @@ public class QuizMatematica {
 	private static int pontuacao = 0;
 	private static ArrayList<String> vida = new ArrayList<>(Arrays.asList("♥", "♥", "♥"));
 
+	// Atributos Calculadora
+
+	protected BigDecimal cA;
+	protected BigDecimal cB;
+	protected BigDecimal respostaCorretaCalculadora;
+
 	protected Random geradorDeNumeros = new Random();
-	private Scanner scanner = new Scanner(System.in);
+	protected Scanner scanner = new Scanner(System.in);
 
 	// Construtor
 
 	public QuizMatematica() {
 	}
-	
-	// Getters e Setters
+
+	// Inicio - Getters e Setters Quiz
 
 	public int getA() {
 		return a;
@@ -79,22 +86,22 @@ public class QuizMatematica {
 	}
 
 	public void setRespostaDoUsuario(int respostaDoUsuario) {
-	    boolean continua = true;
-	    
-	    do{
-	      try{
-	        this.respostaDoUsuario = (int) scanner.nextDouble();
+		boolean continua = true;
+		// Inicio - Tratamento de dados do usuário
+		do {
+			try {
+				this.respostaDoUsuario = (int) scanner.nextDouble();
 
-	        continua = false;
-		// não permite que o usuário insira String, somente números inteiros. 
-	      }catch (InputMismatchException erro1) {
-	        System.err.println("Não é permitido inserir letras, informe apenas números! Tente novamente");
-	        scanner.nextLine(); //descarta a entrada errada do usuário
-	      }
-		    
-	    } while(continua);
-		
-	  }
+				continua = false;
+
+			} catch (InputMismatchException erro1) {
+				System.err.println("Não é permitido inserir letras, informe apenas números!");
+				scanner.nextLine(); // descarta a entrada errada do usuário
+			}
+
+		} while (continua);
+		// Fim - Tratamento de dados do usúario
+	}
 
 	public static int getPontuacao() {
 		return pontuacao;
@@ -110,13 +117,68 @@ public class QuizMatematica {
 
 	public static void setVida(ArrayList<String> vida) {
 		QuizMatematica.vida = vida;
-
 	}
 
-	// Métodos da classe mãe
+	// Getters e Setter Calculadora
 
+	public BigDecimal getcA() {
+		return cA;
+	}
+
+	public void setcA(BigDecimal cA) {
+		boolean continua = true;
+
+		// Inicio - Tratamento de dados do usuário
+		do {
+			try {
+				this.cA = scanner.nextBigDecimal();
+
+				continua = false;
+
+			} catch (InputMismatchException erro1) {
+				System.err.println("Não é permitido inserir letras, informe apenas números!");
+				scanner.nextLine(); // descarta a entrada errada do usuário
+			}
+
+		} while (continua);
+		// Fim - Tratamento de dados do usuário
+	}
+
+	public BigDecimal getcB() {
+		return cB;
+	}
+
+	public void setcB(BigDecimal cB) {
+		boolean continua = true;
+		// Inicio - Tratamento de dados do usuário
+		do {
+			try {
+				this.cB = scanner.nextBigDecimal();
+
+				continua = false;
+
+			} catch (InputMismatchException erro1) {
+				System.err.println("Não é permitido inserir letras, informe apenas números!");
+				scanner.nextLine(); // descarta a entrada errada do usuário
+			}
+
+		} while (continua);
+		// Fim - Tratamento de dados do usuário
+	}
+
+	public BigDecimal getRespostaCorretaCalculadora() {
+		return respostaCorretaCalculadora;
+	}
+
+	public void setRespostaCorretaCalculadora(BigDecimal respostaCorretaCalculadora) {
+		this.respostaCorretaCalculadora = respostaCorretaCalculadora;
+	}
+	// Fim - Getters e Setters Quiz
+
+	// Inicio - Métodos da classe mãe
+
+	// Abre a interface para perguntar o nome do usuário
 	public static void perguntaNome() {
-		// Abre a interface para perguntar o nome
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -127,20 +189,23 @@ public class QuizMatematica {
 					// aparece janela
 					frame.setVisible(true);
 				} catch (Exception e) {
+					// Interrompe a execução da API caso de problemas
 					e.printStackTrace();
 				}
 			}
 		});
 	}
 
+	// Remove vidas -1
 	public void removeVidas() {
 		getVida().remove(getVida().size() - 1);
 	}
 
+	// Abre a Interface de Game Over quando o usuario perder todas as vidas
 	public boolean perdeu() {
+		// Tratamento quando as vidas chegarem a 0.
 		if (getVida().size() == 0) {
 
-			// Abre a Interface de Game Over
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
@@ -161,6 +226,7 @@ public class QuizMatematica {
 		}
 	}
 
+	// Abre a Interface Parabens quando o usuario acertar todas as questões
 	public static void parabens() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -168,7 +234,6 @@ public class QuizMatematica {
 					TelaCongragulations frame = new TelaCongragulations();
 					// Apresenta janela
 					frame.setVisible(true);
-
 					// centralizar janela na tela
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -178,10 +243,10 @@ public class QuizMatematica {
 		});
 	}
 
+	// Abre a Interface Perdeu Especial para o usuario atingir 9 pontos
 	public boolean perdeuEspecial() {
+		// Tratamento quando as vidas chegarem 0
 		if (getVida().size() == 0) {
-
-			// Abre a Interface de Game Over
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
@@ -202,9 +267,11 @@ public class QuizMatematica {
 		}
 	}
 
+	// Mostra a pontuação do usuario
 	public void mostreAPontuacao() {
 		System.out.println("\nSua pontuação é: " + getPontuacao() + "\n");
-		//apresenta a pontuação do usuário
 	}
+
+	// Fim - Método classe mãe
 
 }

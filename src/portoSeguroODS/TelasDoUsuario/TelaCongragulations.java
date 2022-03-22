@@ -35,18 +35,8 @@ public class TelaCongragulations extends JFrame {
 				System.exit(0);
 			}
 		});
-		botaoSair.setBounds(314, 237, 89, 23);
+		botaoSair.setBounds(207, 237, 89, 23);
 		contentPane.add(botaoSair);
-		
-		JButton botaoJogarNovamente = new JButton("Jogar");
-		botaoJogarNovamente.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				QuizMatematica.perguntaNome();
-			}
-		});
-		botaoJogarNovamente.setBounds(83, 237, 89, 23);
-		contentPane.add(botaoJogarNovamente);
 		
 		JLabel vidas = new JLabel("Pontos: "+ QuizMatematica.getPontuacao());
 		vidas.setForeground(Color.WHITE);
@@ -61,7 +51,7 @@ public class TelaCongragulations extends JFrame {
 		contentPane.add(pontos);
 		
 		JLabel fundoWin = new JLabel("New label");
-		fundoWin.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\congratulations.gif"));
+		fundoWin.setIcon(new ImageIcon("C:\\Users\\home\\Desktop\\Exercicios-JAVA\\ProejtoQuiz\\img\\congratulations.gif"));
 		fundoWin.setBounds(0, 0, 634, 280);
 		contentPane.add(fundoWin);
 	}

@@ -29,7 +29,7 @@ public class TelaGameOverEspecial extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton botaoBasico = new JButton("B√°sico");
+		JButton botaoBasico = new JButton("B·sico");
 		botaoBasico.setFont(new Font("Arial", Font.PLAIN, 11));
 		botaoBasico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -37,7 +37,7 @@ public class TelaGameOverEspecial extends JFrame {
 			}
 		});
 		
-		JLabel pontos = new JLabel("Pontua√ß√£o: "+ QuizMatematica.getPontuacao());
+		JLabel pontos = new JLabel("PontuaÁ„o: "+ QuizMatematica.getPontuacao());
 		pontos.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		pontos.setForeground(Color.WHITE);
 		pontos.setBounds(10, 11, 141, 23);
@@ -45,7 +45,7 @@ public class TelaGameOverEspecial extends JFrame {
 		botaoBasico.setBounds(10, 215, 89, 23);
 		contentPane.add(botaoBasico);
 		
-		JButton botaoIntermediario = new JButton("Intermedi√°rio");
+		JButton botaoIntermediario = new JButton("Intermedi·rio");
 		botaoIntermediario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new TelaLinkIntermediario().setVisible(true);
@@ -55,7 +55,7 @@ public class TelaGameOverEspecial extends JFrame {
 		botaoIntermediario.setBounds(178, 215, 113, 23);
 		contentPane.add(botaoIntermediario);
 		
-		JButton botaoAvancado = new JButton("Avan√ßado");
+		JButton botaoAvancado = new JButton("AvanÁado");
 		botaoAvancado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new TelaLinkAvancado().setVisible(true);
@@ -68,7 +68,7 @@ public class TelaGameOverEspecial extends JFrame {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 16));
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Kevim\\eclipse-workspace\\portoSeguroODS\\img\\fimEspecial.png"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\home\\Desktop\\Exercicios-JAVA\\ProejtoQuiz\\img\\fimEspecial.png"));
 		lblNewLabel.setBounds(0, 0, 480, 261);
 		contentPane.add(lblNewLabel);
 	}
