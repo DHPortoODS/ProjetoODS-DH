@@ -2,8 +2,10 @@
 
 Repo criado para entrega de projeto de pratica POO Java
 
-## Objetivo
-O objetivo do projeto foi desenvolver um programa que permite ao usuário testar seus conhecimentos em operações matemáticas através de um quiz.
+## Apresentação e Objetivo
+- O programa foi baseado na ODS 4 - Educação e Qualidade que tem por objetivo assegurar educação equitativa e de qualidade, promovendo oportunidades de aprendizagem ao longo da vida para todos.
+- O objetivo do projeto Quiz Matemática foi desenvolver um programa que permite ao usuário testar seus conhecimentos em operações matemáticas através de um quiz.
+
 
 ## Pré-requisito:
 
