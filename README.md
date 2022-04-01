@@ -1,7 +1,9 @@
-# ProjetoODS-DH
+# ProjetoODS-DH - Quiz Matematica
 
 Repo criado para entrega de projeto de pratica POO Java
 
+## Objetivo
+O objetivo do projeto foi desenvolver um programa que permite ao usuário testar seus conhecimentos em operações matemáticas através de um quiz.
 
 ## Pré-requisito:
 
